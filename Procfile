@@ -1,0 +1,1 @@
+web: gunicorn grocery_shopping_list.wsgi
