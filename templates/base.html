@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,13 +11,82 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/9beb937b3c.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white py-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span class="brand">Grocery Shopping List</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shopping List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Add Item</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     
     {% block content %}
     <!-- Content Goes here -->
     {% endblock content %}
 
+    <footer class="text-center text-white fixed-bottom">
+        <!-- Grid container -->
+        <div class="container">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="muted"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="muted"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+      
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="muted"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="muted"
+              ><i class="fab fa-github"></i></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        </footer>
 </body>
 </html>
