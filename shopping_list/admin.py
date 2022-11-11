@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import ShopingItem
+from .models import AddCategory
 
-# Register your models here.
+admin.site.register(ShopingItem)
+admin.site.register(AddCategory)
