@@ -10,7 +10,8 @@
         <th scope="col">Quantity</th>
         <th scope="col">Category</th>
         <th scope="col"></th>
-      </tr>
+        <th scope="col"></th>
+        </tr>
     </thead>
     <tbody>
         {% for item in items %}
@@ -28,6 +29,11 @@
                         <a class="dropdown-item" href="#">Delete Item</a>
                     </div>
                 </div>
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                    Picked
+                  </button>
             </td>
             </tr>
         {% endfor %}
