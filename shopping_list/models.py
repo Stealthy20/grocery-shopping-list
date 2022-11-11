@@ -15,7 +15,7 @@ class AddCategory(models.Model):
         ordering = ["category"]
 
 
-class ShopingItem(models.Model):
+class ShoppingItem(models.Model):
 
     name = models.CharField(max_length=50, blank=False)
     brand = models.CharField(max_length=50, blank=True)
