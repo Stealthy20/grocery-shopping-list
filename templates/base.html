@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light bg-white py-4">
+    <nav class="navbar navbar-expand-md navbar-light bg-white py-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><span class="brand">Grocery Shopping List</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -25,17 +25,25 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Shopping List</a>
+                    </li><li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Add Item</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shopping List</a>
+                        <a class="nav-link active" aria-current="page" href="#">Manage Categories</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Add Item</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
