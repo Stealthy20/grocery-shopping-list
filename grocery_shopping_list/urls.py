@@ -20,8 +20,11 @@ from shopping_list import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home,name="home"),
-    path('shopping_list', views.get_shoppinglist,name="shoppinglist"),
+    path('shopping_list', views.get_shoppinglist,name="shopping_list"),
     path('add', views.add_item, name='add'),
+    path('edit/<item_id>', views.edit_item, name='edit'),
+    path('delete/<item_id>', views.delete_item, name='delete'),
+    path('toggle/<item_id>', views.toggle_item, name='toggle'),
     path('accounts/', include('allauth.urls')),
 ]
 
