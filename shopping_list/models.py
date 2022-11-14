@@ -15,9 +15,10 @@ class AddCategory(models.Model):
 
 class ShoppingItem(models.Model):
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=50, blank=False)
     brand = models.CharField(max_length=50, blank=True)
-    quantity = models.FloatField(default=1)
+    quantity = models.CharField(max_length=50, blank=True, default=1)
     category = models.ForeignKey(AddCategory, on_delete=models.CASCADE, null=True)
     taken = models.BooleanField(null=False, blank=False, default=False)
 
