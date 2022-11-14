@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if user.is_authenticated %}
     <h2>Items to Pick</h2>
     <table class="table">
         <thead>
@@ -16,7 +15,8 @@
         </thead>
         <tbody>
             {% for item in items %}
-                {% if item.taken == False %}
+              
+        
                 <tr>
                     <th scope="row">{{ item.name }}</th>
                     <td>{{ item.brand }}</td>
@@ -36,8 +36,11 @@
                     <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
                 </td>
                 </tr>
-                {% endif %}
+          
+                
+               
             {% endfor %}
+        
             </tbody>
         </table>
             <h2>Items Picked</h2>
@@ -78,8 +81,5 @@
             {% endfor %}
         </tbody>
     </table>
-    {% else %}
-    
-    {% endif %}
 
     {% endblock %}

@@ -3,8 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import ShoppingItem
+from .models import ShoppingItem, CreateShoppingList
 from .forms import ItemForm
+
+
+def index(response, id):
+    ls = CreateShoppingList.objects.get(id=id)
+    return render(response,"index.html", {"name:ls.name"})
 
 
 def home(request):
@@ -17,6 +22,7 @@ def get_shoppinglist(request):
         'items': items
     }
     return render(request,'shopping_list.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def add_item(request):
