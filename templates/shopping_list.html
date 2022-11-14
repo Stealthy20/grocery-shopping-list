@@ -15,30 +15,29 @@
         </thead>
         <tbody>
             {% for item in items %}
-              
-        
-                <tr>
-                    <th scope="row">{{ item.name }}</th>
-                    <td>{{ item.brand }}</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ item.category }}</td>
-                <td>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
-                            <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
-                </td>
-                </tr>
-          
-                
-               
+                {% if item.user.username == request.user.username %}
+                    {% if item.taken == False %}
+                        <tr>
+                            <th scope="row">{{ item.name }}</th>
+                            <td>{{ item.brand }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.category }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
+                                    <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
+                        </td>
+                        </tr>
+                    {% endif %}
+                {% endif %}
             {% endfor %}
         
             </tbody>
@@ -57,26 +56,28 @@
             </thead>
             <tbody>
             {% for item in items %}
-                {% if item.taken%}
-                <tr>
-                    <th scope="row">{{ item.name }}</th>
-                    <td>{{ item.brand }}</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ item.category }}</td>
-                <td>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
-                            <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
-                </td>
-                </tr>
+                {% if item.user.username == request.user.username %}
+                     {% if item.taken%}
+                        <tr>
+                            <th scope="row">{{ item.name }}</th>
+                            <td>{{ item.brand }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.category }}</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
+                                    <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
+                        </td>
+                        </tr>
+                        {% endif %}
                 {% endif %}
             {% endfor %}
         </tbody>

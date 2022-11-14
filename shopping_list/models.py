@@ -27,15 +27,3 @@ class ShoppingItem(models.Model):
 
     class Meta:
         ordering = ["category"]
-
-
-class CreateShoppingList:
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=50, blank=False)
-    created_on = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        ordering = ["created_on"]

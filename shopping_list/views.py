@@ -3,17 +3,21 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import ShoppingItem, CreateShoppingList
-from .forms import ItemForm
-
-
-def index(response, id):
-    ls = CreateShoppingList.objects.get(id=id)
-    return render(response,"index.html", {"name:ls.name"})
+from .models import ShoppingItem
+from .forms import ShopItemForm
 
 
 def home(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
+
+
+@login_required(login_url='/accounts/login/')
+def create_shoppinglist(request):
+    lists = CreateShoppingList.objects.all()
+    context = {
+        'lists': lists
+    }
+    return render(request, 'list.html', context)
 
 @login_required(login_url='/accounts/login/')
 def get_shoppinglist(request):
@@ -21,18 +25,18 @@ def get_shoppinglist(request):
     context = {
         'items': items
     }
-    return render(request,'shopping_list.html', context)
+    return render(request, 'shopping_list.html', context)
 
 
 @login_required(login_url='/accounts/login/')
 def add_item(request):
     if request.method == 'POST':
-        form = ItemForm(request.POST)
+        form = ShopItemForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'You successfully added the item')
             return redirect('add')
-    form = ItemForm()
+    form = ShopItemForm()
     context = {
         'form': form
     }
@@ -42,12 +46,12 @@ def add_item(request):
 def edit_item(request, item_id):
     item = get_object_or_404(ShoppingItem, id=item_id)
     if request.method == 'POST':
-        form = ItemForm(request.POST, instance=item)
+        form = ShopItemForm(request.POST, instance=item)
         if form.is_valid():
             form.save()
             messages.success(request, 'You successfully updated the item')
             return redirect('shopping_list')
-    form = ItemForm(instance=item)
+    form = ShopItemForm(instance=item)
     context = {
         'form': form
     }
