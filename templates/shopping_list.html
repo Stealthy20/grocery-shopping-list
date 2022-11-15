@@ -36,6 +36,7 @@
                             <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
                         </td>
                         </tr>
+                    
                     {% endif %}
                 {% endif %}
             {% endfor %}
@@ -57,7 +58,7 @@
             <tbody>
             {% for item in items %}
                 {% if item.user.username == request.user.username %}
-                     {% if item.taken%}
+                     {% if item.taken %}
                         <tr>
                             <th scope="row">{{ item.name }}</th>
                             <td>{{ item.brand }}</td>

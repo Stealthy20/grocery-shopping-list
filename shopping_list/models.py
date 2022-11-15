@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class AddCategory(models.Model):
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     category = models.CharField(max_length=50, unique=True, blank=False)
 
     def __str__(self):
@@ -15,7 +16,7 @@ class AddCategory(models.Model):
 
 class ShoppingItem(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,)
     name = models.CharField(max_length=50, blank=False)
     brand = models.CharField(max_length=50, blank=True)
     quantity = models.CharField(max_length=50, blank=True, default=1)

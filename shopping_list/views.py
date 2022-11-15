@@ -4,20 +4,14 @@ from django.views import generic, View
 from django.http import HttpResponse
 from django.contrib import messages
 from .models import ShoppingItem
+from .models import AddCategory
 from .forms import ShopItemForm
+from .forms import AddCategory
 
 
 def home(request):
     return render(request, 'index.html')
 
-
-@login_required(login_url='/accounts/login/')
-def create_shoppinglist(request):
-    lists = CreateShoppingList.objects.all()
-    context = {
-        'lists': lists
-    }
-    return render(request, 'list.html', context)
 
 @login_required(login_url='/accounts/login/')
 def get_shoppinglist(request):
@@ -29,11 +23,37 @@ def get_shoppinglist(request):
 
 
 @login_required(login_url='/accounts/login/')
+def get_categories(request):
+    categories = AddCategory.objects.all()
+    context = {
+        'categories': categories
+    }
+    return render(request, 'add_categories.html', context)
+
+
+@login_required(login_url='/accounts/login/')
+def add_category(request):
+    if request.method == 'POST':
+        form = AddCategory(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'You successfully added the category')
+            return redirect('addcat')
+    form = AddCategory()
+    context = {
+        'form': form
+    }
+    return render(request, 'add_categories.html', context)
+
+
+@login_required(login_url='/accounts/login/')
 def add_item(request):
     if request.method == 'POST':
         form = ShopItemForm(request.POST)
         if form.is_valid():
-            form.save()
+            ShoppingItem = form.save(commit=False)
+            ShoppingItem.user = request.user
+            ShoppingItem = ShoppingItem.save()
             messages.success(request, 'You successfully added the item')
             return redirect('add')
     form = ShopItemForm()
