@@ -3,10 +3,11 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponse
 from django.contrib import messages
+import django_filters
 from .models import ShoppingItem
 from .models import AddCategory
 from .forms import ShopItemForm
-from .forms import AddCategory
+from .forms import CategoryForm
 
 
 def home(request):
@@ -28,18 +29,20 @@ def get_categories(request):
     context = {
         'categories': categories
     }
-    return render(request, 'add_categories.html', context)
+    return render(request, 'get_categories.html', context)
 
 
 @login_required(login_url='/accounts/login/')
-def add_category(request):
+def add_categories(request):
     if request.method == 'POST':
-        form = AddCategory(request.POST)
+        form = CategoryForm(request.POST)
         if form.is_valid():
-            form.save()
+            AddCategory = form.save(commit=False)
+            AddCategory.user = request.user
+            AddCategory = AddCategory.save()
             messages.success(request, 'You successfully added the category')
             return redirect('addcat')
-    form = AddCategory()
+    form = CategoryForm()
     context = {
         'form': form
     }
@@ -56,11 +59,13 @@ def add_item(request):
             ShoppingItem = ShoppingItem.save()
             messages.success(request, 'You successfully added the item')
             return redirect('add')
-    form = ShopItemForm()
+    categories = AddCategory.objects.filter(user=request.user)
+    form = ShopItemForm(categories=categories)
     context = {
         'form': form
     }
     return render(request, 'add_item.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def edit_item(request, item_id):

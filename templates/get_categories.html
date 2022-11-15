@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+<h1>Default Categories</h1>
+<ul>
+{% for category in categories %}
+{% if category.user.username == 'admin' %}
+<li>{{ category.category }}</li>
+{% endif %}
+{% endfor %}
+</ul>
+</div>
+<div>
+    <h1>My Categories</h1>
+    <ul>
+    {% for category in categories %}
+    {% if category.user.username == request.user.username %}
+    <li>{{ category.category }}</li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+    <a class="btn btn-primary" href="{% url 'addcat' %}" role="button">Add New Categories</a>
+    <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add item to shopping list</a>
+    </div>
+
+
+
+<!-- <h1>Add a category</h1>
+<form action="addcat" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <p>
+          <button type="submit">Add Item</button> 
+        </p> 
+    </div>
+</form> -->
+
+
+{% endblock %}
