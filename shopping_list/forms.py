@@ -9,9 +9,9 @@ class ShopItemForm(forms.ModelForm):
         fields = ['name', 'brand', 'quantity', 'category']
 
     # def __init__(self, *args, **kwargs):
-        
+    #     categories = kwargs.pop('categories')
     #     super(ShopItemForm, self).__init__(*args, **kwargs)
-    #     self.fields['category'].queryset = kwarg.pop('categories')
+    #     self.fields['category'].queryset = categories
 
 
 class CategoryForm(forms.ModelForm):
