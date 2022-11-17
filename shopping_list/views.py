@@ -60,7 +60,7 @@ def add_item(request):
             messages.success(request, 'You successfully added the item')
             return redirect('add')
     categories = AddCategory.objects.filter(user=request.user)
-    form = ShopItemForm(categories=categories)
+    form = ShopItemForm()
     context = {
         'form': form
     }

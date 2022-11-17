@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
 body {
     background-color: palegreen;
 }
@@ -6,6 +12,3 @@ footer {
     background-color: #f1f1f1;;
 }
 
-.btm-footer {
-    background-color: rgba(0, 0, 0, 0.2);
-}
