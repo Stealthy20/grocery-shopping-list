@@ -2,6 +2,7 @@
 
 {% block content %}
     <h4>Items to Pick</h4>
+  
     <div class="table-responsive">
     <table class="table sortTable">
         <thead>
@@ -10,8 +11,6 @@
                 <th scope="col">Brand</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Category</th>
-                <th scope="col">Edit Item</th>
-                <th scope="col">Picked</th>
             </tr>
         </thead>
         <tbody>
@@ -19,12 +18,15 @@
                 {% if item.user.username == request.user.username %}
                     {% if item.taken == False %}
                         <tr>
-                            <th scope="row">{{ item.name }}</th>
+                            <th scope="row">
+                                <a class="btn btn-success" href="/toggle/{{ item.id }}" role="button">&#x2713;</a>
+                                <a href="/edit/{{ item.id }}">{{ item.name }}</a>
+                            </th>
                             <td>{{ item.brand }}</td>
                             <td>{{ item.quantity }}</td>
-                            <td>{{ item.category }}</td>
                             <td>
                                 <div class="dropdown">
+                                    {{ item.category }}
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -32,9 +34,6 @@
                                         <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
                                     </div>
                                 </div>
-                            </td>
-                            <td>
-                                <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
                             </td>
                         </tr>
                     
@@ -46,16 +45,14 @@
         </table>
     </div>
             <h4>Items Picked</h4>
-        <div class="table-responsive"></div>
+        <div class="table-responsive">
         <table class="table sortTable">
             <thead>
                 <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Category</th>
-                <th scope="col">Edit Item</th>
-                <th scope="col">Picked</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Category</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,22 +60,22 @@
                 {% if item.user.username == request.user.username %}
                      {% if item.taken %}
                         <tr>
-                            <th scope="row">{{ item.name }}</th>
+                            <th scope="row">
+                                <a class="btn btn-danger" href="/toggle/{{ item.id }}" role="button">X</a>
+                                <a href="/edit/{{ item.id }}">{{ item.name }}</a>
+                            </th>
                             <td>{{ item.brand }}</td>
                             <td>{{ item.quantity }}</td>
-                            <td>{{ item.category }}</td>
                             <td>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
-                                    <a class="dropdown-item" href="/delete/{{ item.id }}">Delete Item</a>
+                                <div class="dropdown">
+                                    {{ item.category }}
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
+                                        <a class="dropdown-item" href="#deletemodal" data-toggle="modal" data-target="#deletemodal">Delete Item</a>
+                                    </div>
                                 </div>
-                            </div>
-                            </td>
-                            <td>
-                                <a class="btn btn-primary" href="/toggle/{{ item.id }}" role="button">Taken</a>
                             </td>
                         </tr>
                         {% endif %}
@@ -88,4 +85,6 @@
     </table>
     </div>
 
+
+    
     {% endblock %}

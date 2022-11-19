@@ -8,8 +8,8 @@
     {{ form.as_p }}
     <div>
         <p>
-        <button type="submit">Update Item</button> 
-        <a class="btn btn-primary" href="/delete/{{ item.id }}" role="button">Delete Item</a>
+        <button class="btn btn-secondary" type="submit">Update Item</button> 
+        <a class="btn btn-danger" href="#deletemodal" data-toggle="modal" data-target="#deletemodal">Delete Item</a>
         </p> 
     </div>
 </form>
