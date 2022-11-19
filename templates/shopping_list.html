@@ -26,7 +26,7 @@
                             <td>{{ item.quantity }}</td>
                             <td>
                                 <div class="dropdown">
-                                    {{ item.category }}
+                                    {{ item.category}}
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -73,7 +73,7 @@
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="/edit/{{ item.id }}">Edit Item</a>
-                                        <a class="dropdown-item" href="#deletemodal" data-toggle="modal" data-target="#deletemodal">Delete Item</a>
+                                        <a class="dropdown-item" data-toggle="modal" data-target="#deletemodal">Delete Item</a>
                                     </div>
                                 </div>
                             </td>
@@ -84,7 +84,6 @@
         </tbody>
     </table>
     </div>
-
 
     
     {% endblock %}

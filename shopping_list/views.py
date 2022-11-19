@@ -54,15 +54,16 @@ def add_categories(request):
 def add_item(request):
     if request.method == 'POST':
         form = ShopItemForm(request.POST)
+        category = request.POST.get("categories")
         if form.is_valid():
             ShoppingItem = form.save(commit=False)
-            category = request.POST.get("categories")
             ShoppingItem.user = request.user
+            # category = request.ShoppingItem.category
             ShoppingItem = ShoppingItem.save()
             messages.success(request, 'You successfully added the item')
             return redirect('add')
-    form = ShopItemForm()
     categories = AddCategory.objects.filter(user=request.user)
+    form = ShopItemForm()
     return render(request, 'add_item.html', {'form': form, 'categories': categories})
 
 
@@ -72,14 +73,14 @@ def edit_item(request, item_id):
     if request.method == 'POST':
         form = ShopItemForm(request.POST, instance=item)
         if form.is_valid():
+            category = request.POST.get("categories")
             form.save()
             messages.success(request, 'You successfully updated the item')
             return redirect('shopping_list')
     form = ShopItemForm(instance=item)
-    context = {
-        'form': form
-    }
-    return render(request, 'edit_item.html', context)
+    categories = AddCategory.objects.filter(user=request.user)
+  
+    return render(request, 'edit_item.html', {'form': form, 'categories': categories})
 
 
 def delete_item(request, item_id):
