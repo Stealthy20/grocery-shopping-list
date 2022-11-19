@@ -6,7 +6,7 @@ from .models import AddCategory
 class ShopItemForm(forms.ModelForm):
     class Meta:
         model = ShoppingItem
-        fields = ['name', 'brand', 'quantity', 'category']
+        fields = ['name', 'brand', 'quantity']
 
     # def __init__(self, *args, **kwargs):
     #     categories = kwargs.pop('categories')

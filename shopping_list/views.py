@@ -10,6 +10,7 @@ from .forms import ShopItemForm
 from .forms import CategoryForm
 
 
+
 def home(request):
     return render(request, 'index.html')
 
@@ -55,16 +56,14 @@ def add_item(request):
         form = ShopItemForm(request.POST)
         if form.is_valid():
             ShoppingItem = form.save(commit=False)
+            category = request.POST.get("categories")
             ShoppingItem.user = request.user
             ShoppingItem = ShoppingItem.save()
             messages.success(request, 'You successfully added the item')
             return redirect('add')
-    categories = AddCategory.objects.filter(user=request.user)
     form = ShopItemForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'add_item.html', context)
+    categories = AddCategory.objects.filter(user=request.user)
+    return render(request, 'add_item.html', {'form': form, 'categories': categories})
 
 
 @login_required(login_url='/accounts/login/')

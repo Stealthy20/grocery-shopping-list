@@ -4,15 +4,21 @@
 
 <h1>Add a item to the shopping list</h1>
 <form action="add" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <div>
-        <p>
-          <button type="submit">Add Item</button> 
-          <a class="btn btn-primary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>
-        </p> 
-    </div>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div>
+    Category
+    
+  <select name="categories">
+      {% for category in categories %}
+      <option value="{{ category.category }}">{{ category.category }}</option>
+      {% endfor %}
+    </select> 
+  </div> 
+      <button type="submit">Add Item</button> 
+      <a class="btn btn-primary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
+      
 </form>
 
 {% endblock %}
+
