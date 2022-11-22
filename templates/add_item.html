@@ -14,6 +14,7 @@
       <option value="{{ category.id }}">{{ category.category }}</option>
       {% endfor %}
     </select> 
+    <a class="btn btn-success" href="{% url 'getcat' %}" role="button">Add New Categories</a>   
   </div> 
       <button class="btn btn-success" type="submit">Add Item</button> 
       <a class="btn btn-secondary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
