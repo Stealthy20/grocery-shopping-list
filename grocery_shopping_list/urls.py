@@ -26,6 +26,7 @@ urlpatterns = [
     path('add', views.add_item, name='add'),
     path('edit/<item_id>', views.edit_item, name='edit'),
     path('delete/<item_id>', views.delete_item, name='delete'),
+    path('deletecat/<category_id>', views.delete_cat, name='deletecat'),
     path('toggle/<item_id>', views.toggle_item, name='toggle'),
     path('accounts/', include('allauth.urls')),
 ]

@@ -91,3 +91,12 @@ def toggle_item(request, item_id):
     item.taken = not item.taken
     item.save()
     return redirect('shopping_list')
+
+
+def delete_cat(request, category_id):
+    category = get_object_or_404(AddCategory, id=category_id)
+    if request.method == 'POST':
+        category.delete()
+        messages.success(request, 'You successfully deleted')
+        return redirect('getcat')
+    return render(request, 'delete_cat.html', {'category': category})

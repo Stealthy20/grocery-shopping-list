@@ -4,13 +4,17 @@
 
 
 <div>
-    <h1>My Categories</h1>
-    <ul>
-    {% for category in categories %}
-    {% if category.user.username == request.user.username %}
-    <li>{{ category.category }}</li>
-    {% endif %}
-    {% endfor %}
+    <h4>My Categories</h4>
+    <ul class="list-group">
+        
+        {% for category in categories %}
+         {% if category.user.username == request.user.username %}
+            <li>{{ category.category }}
+            <a class="btn btn-primary" href="/deletecat/{{ category.id }}" role="button">Delete</a>
+            </li>
+        {% endif %}
+        {% endfor %}
+        
     </ul>
     <a class="btn btn-primary" href="{% url 'addcat' %}" role="button">Add New Categories</a>
     <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add item to shopping list</a>

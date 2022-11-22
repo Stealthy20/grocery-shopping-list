@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form  method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <h5>Are you sure that you want to delete {{ category.category }}?</h5>
+        <p>
+        <button class="btn btn-danger" type="submit">Delete Category </button> 
+        <a class="btn btn-secondary" href="{% url 'getcat' %}">Return</a>
+        </p> 
+    </div>
+</form>
+
+{% endblock %} -->
