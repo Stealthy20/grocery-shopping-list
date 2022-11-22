@@ -18,19 +18,13 @@ def home(request):
 @login_required(login_url='/accounts/login/')
 def get_shoppinglist(request):
     items = ShoppingItem.objects.all()
-    context = {
-        'items': items
-    }
-    return render(request, 'shopping_list.html', context)
+    return render(request, 'shopping_list.html', {'items': items})
 
 
 @login_required(login_url='/accounts/login/')
 def get_categories(request):
     categories = AddCategory.objects.all()
-    context = {
-        'categories': categories
-    }
-    return render(request, 'get_categories.html', context)
+    return render(request, 'get_categories.html', {'categories': categories})
 
 
 @login_required(login_url='/accounts/login/')
@@ -38,16 +32,13 @@ def add_categories(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         if form.is_valid():
-            item= form.save(commit=False)
+            item = form.save(commit=False)
             item.user = request.user
             item = form.save()
             messages.success(request, 'You successfully added the category')
             return redirect('addcat')
     form = CategoryForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'add_categories.html', context)
+    return render(request, 'add_categories.html', {'form': form})
 
 
 @login_required(login_url='/accounts/login/')
@@ -88,9 +79,11 @@ def edit_item(request, item_id):
 
 def delete_item(request, item_id):
     item = get_object_or_404(ShoppingItem, id=item_id)
-    item.delete()
-    messages.success(request, 'You successfully deleted the item')
-    return redirect('shopping_list')
+    if request.method == 'POST':
+        item.delete()
+        messages.success(request, 'You successfully deleted')
+        return redirect('shopping_list')
+    return render(request, 'delete_item.html', {'item': item})
 
 
 def toggle_item(request, item_id):

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form  method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <h5>Are you sure that you want to delete {{ item.name }}?</h5>
+        <p>
+        <button class="btn btn-danger" type="submit">Delete Item </button> 
+        <a class="btn btn-secondary" href="#deletemodal" data-toggle="modal" data-target="#deletemodal">return to shopping list</a>
+        </p> 
+    </div>
+</form>
+
+{% endblock %} -->
