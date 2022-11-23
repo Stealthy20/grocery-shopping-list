@@ -47,13 +47,20 @@ def add_item(request):
     if request.method == 'POST':
         form = ShopItemForm(request.POST)
         category_id = request.POST.get("categories")
-        category = get_object_or_404(AddCategory, id=category_id)
-        if form.is_valid():
-            item = form.save(commit=False)
-            item.user = request.user
-            item.category = category
-            item = form.save()
-            messages.success(request, 'You successfully added the item')
+        if category_id:
+            category = get_object_or_404(AddCategory, id=category_id)
+            if form.is_valid():
+                item = form.save(commit=False)
+                item.user = request.user
+                item.category = category
+                item = form.save()
+                messages.success(request, 'You successfully added the item')
+                return redirect(reverse('add_item'))
+            else:
+                messages.success(request, 'You need to add a Category')
+                return redirect('add')
+        else:
+            messages.success(request, 'You need to add a Category')
             return redirect('add')
     categories = AddCategory.objects.filter(user=request.user)
     form = ShopItemForm()
