@@ -56,11 +56,8 @@ def add_item(request):
                 item = form.save()
                 messages.success(request, 'You successfully added the item')
                 return redirect(reverse('add_item'))
-            else:
-                messages.success(request, 'You need to add a Category')
-                return redirect('add')
         else:
-            messages.success(request, 'You need to add a Category')
+            messages.error(request, 'You need to add a Category before adding a item to the Shopping List')
             return redirect('add')
     categories = AddCategory.objects.filter(user=request.user)
     form = ShopItemForm()
