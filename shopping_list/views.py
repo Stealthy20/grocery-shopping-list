@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponse
@@ -77,13 +78,13 @@ def edit_item(request, item_id):
     return render(request, 'edit_item.html', {'form': form, 'categories': categories})
 
 
+
+@login_required
 def delete_item(request, item_id):
-    item = get_object_or_404(ShoppingItem, id=item_id)
-    if request.method == 'POST':
-        item.delete()
-        messages.success(request, 'You successfully deleted')
-        return redirect('shopping_list')
-    return render(request, 'delete_item.html', {'item': item})
+    item = get_object_or_404(ShoppingItem, pk=item_id)
+    item.delete()
+    messages.success(request, 'Item deleted successfully')
+    return redirect('shopping_list')
 
 
 def toggle_item(request, item_id):
@@ -93,10 +94,10 @@ def toggle_item(request, item_id):
     return redirect('shopping_list')
 
 
+
+@login_required
 def delete_cat(request, category_id):
-    category = get_object_or_404(AddCategory, id=category_id)
-    if request.method == 'POST':
-        category.delete()
-        messages.success(request, 'You successfully deleted')
-        return redirect('getcat')
-    return render(request, 'delete_cat.html', {'category': category})
+    category = get_object_or_404(AddCategory, pk=category_id)
+    category.delete()
+    messages.success(request, 'Category deleted successfully')
+    return redirect('shopping_list')

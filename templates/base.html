@@ -63,26 +63,8 @@
         </div>
     </div>
     
-  <!-- Delete item Modal -->
-<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog" aria-labelledby="deletemodal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deletemodal">Delete {{ item.name }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Do you really want to delete {{ item.name }} from your shopping list?</p>
-            </div>
-            <div class="modal-footer">
-                <a id="delete-btn" class="btn btn-danger" type="button" name="button" href="/delete/{{ item.id }}">Delete Item</a>
-                <a class="btn btn-secondary" href="{% url 'shopping_list' %}" role="button">Back</a>
-            </div>
-        </div>
-    </div>
-</div>
+
+             
 
     {% block content %}
     
