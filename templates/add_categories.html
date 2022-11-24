@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<h1>Add a New Category</h1>
+<h4>Add a New Category</h4>
 <form action="addcat" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
         <p>
-          <button type="submit">Add Catgegory</button> 
-          <a class="btn btn-primary" href="{% url 'getcat' %}" role="button">Back to Categories</a>
+          <button class="btn btn-success" type="submit">Add Catgegory</button> 
+          <a class="btn btn-secondary" href="{% url 'getcat' %}" role="button">Back to Categories</a>
         </p> 
     </div>
 </form>

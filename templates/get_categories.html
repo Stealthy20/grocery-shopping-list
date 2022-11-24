@@ -40,11 +40,47 @@
         {% endfor %}
         
     </ul>
-    <a class="btn btn-primary" href="{% url 'addcat' %}" role="button">Add New Categories</a>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#addCatModal">Add Category</a>
     <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add item to shopping list</a>
 </div>
 
+<h4>Add a New Category</h4>
+<form action="addcat" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <p>
+          <button class="btn btn-success" type="submit">Add Catgegory</button> 
+          <a class="btn btn-secondary" href="{% url 'category' %}" role="button">Back to Categories</a>
+        </p> 
+    </div>
+</form>
 
+ <!-- Delete Category Modal -->
+ <div class="modal fade" id="addCatModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a New Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body text-center">
+        <form action="addcat" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div>
+                <p>
+                  <a class="btn btn-success"  type="submit">Add Catgegory</a> 
+                  <a class="btn btn-secondary" href="{% url 'category' %}" role="button">Back to Categories</a>
+                </p> 
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
 
 
 

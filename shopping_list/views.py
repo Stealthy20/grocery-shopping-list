@@ -23,13 +23,8 @@ def get_shoppinglist(request):
 
 
 @login_required(login_url='/accounts/login/')
-def get_categories(request):
+def category(request):
     categories = Category.objects.all()
-    return render(request, 'get_categories.html', {'categories': categories})
-
-
-@login_required(login_url='/accounts/login/')
-def add_categories(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
         if form.is_valid():
@@ -37,9 +32,9 @@ def add_categories(request):
             item.user = request.user
             item = form.save()
             messages.success(request, 'You successfully added the category')
-            return redirect('addcat')
+            return redirect('category')
     form = CategoryForm()
-    return render(request, 'add_categories.html', {'form': form})
+    return render(request, 'get_categories.html', {'form': form, 'categories': categories})
 
 
 @login_required(login_url='/accounts/login/')
@@ -98,13 +93,12 @@ def toggle_item(request, item_id):
     return redirect('shopping_list')
 
 
-
 @login_required
 def delete_cat(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully')
-    return redirect('shopping_list')
+    return redirect('addcat')
 
 
 def delete_list(request):

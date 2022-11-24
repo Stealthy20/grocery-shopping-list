@@ -21,8 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('shopping_list', views.get_shoppinglist, name="shopping_list"),
-    path('getcat', views.get_categories, name="getcat"),
-    path('addcat', views.add_categories, name="addcat"),
+    path('category', views.category, name="category"),
+    # path('addcat', views.add_categories, name="addcat"),
     path('add', views.add_item, name='add'),
     path('edit/<item_id>', views.edit_item, name='edit'),
     path(
