@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 import django_filters
 from .models import ShoppingItem
-from .models import AddCategory
+from .models import Category
 from .forms import ShopItemForm
 from .forms import CategoryForm
 
@@ -24,7 +24,7 @@ def get_shoppinglist(request):
 
 @login_required(login_url='/accounts/login/')
 def get_categories(request):
-    categories = AddCategory.objects.all()
+    categories = Category.objects.all()
     return render(request, 'get_categories.html', {'categories': categories})
 
 
@@ -48,7 +48,7 @@ def add_item(request):
         form = ShopItemForm(request.POST)
         category_id = request.POST.get("categories")
         if category_id:
-            category = get_object_or_404(AddCategory, id=category_id)
+            category = get_object_or_404(Category, id=category_id)
             if form.is_valid():
                 item = form.save(commit=False)
                 item.user = request.user
@@ -59,7 +59,7 @@ def add_item(request):
         else:
             messages.error(request, 'You need to add a Category before adding a item to the Shopping List')
             return redirect('add')
-    categories = AddCategory.objects.filter(user=request.user)
+    categories = Category.objects.filter(user=request.user)
     form = ShopItemForm()
     return render(request, 'add_item.html', {'form': form, 'categories': categories})
 
@@ -70,14 +70,14 @@ def edit_item(request, item_id):
     if request.method == 'POST':
         form = ShopItemForm(request.POST, instance=item)
         category_id = request.POST.get("categories")
-        category = get_object_or_404(AddCategory, id=category_id)
+        category = get_object_or_404(Category, id=category_id)
         if form.is_valid():
             item = form.save(commit=False)
             item.category = category
             item = form.save()
             messages.success(request, 'You successfully updated the item')
             return redirect('shopping_list')
-    categories = AddCategory.objects.filter(user=request.user)
+    categories = Category.objects.filter(user=request.user)
     form = ShopItemForm(instance=item)
     return render(request, 'edit_item.html', {'form': form, 'categories': categories})
 
@@ -93,7 +93,7 @@ def delete_item(request, item_id):
 
 def toggle_item(request, item_id):
     item = get_object_or_404(ShoppingItem, id=item_id)
-    item.taken = not item.taken
+    item.picked = not item.picked
     item.save()
     return redirect('shopping_list')
 
@@ -101,7 +101,7 @@ def toggle_item(request, item_id):
 
 @login_required
 def delete_cat(request, category_id):
-    category = get_object_or_404(AddCategory, pk=category_id)
+    category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully')
     return redirect('shopping_list')

@@ -1,6 +1,6 @@
 from django import forms
 from .models import ShoppingItem
-from .models import AddCategory
+from .models import Category
 
 
 class ShopItemForm(forms.ModelForm):
@@ -13,5 +13,5 @@ class ShopItemForm(forms.ModelForm):
 
 class CategoryForm(forms.ModelForm):
     class Meta:
-        model = AddCategory
+        model = Category
         fields = ['category']

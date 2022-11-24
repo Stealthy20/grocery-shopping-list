@@ -5,7 +5,7 @@
     <h4>Items to Pick</h4>
   
     <div class="table-responsive">
-    <table class="table sortTable">
+    <table class="table table-striped table-dark sortTable">
         <thead>
             <tr>
                 <th scope="col">Item</th>
@@ -17,7 +17,7 @@
         <tbody>
             {% for item in items %}
                 {% if item.user.username == request.user.username %}
-                    {% if item.taken == False %}
+                    {% if item.picked == False %}
                         <tr>
                             <th scope="row">
                                 <a class="btn btn-success" href="/toggle/{{ item.id }}" role="button">&#x2713;</a>
@@ -68,7 +68,7 @@
     </div>
             <h4>Items Picked</h4>
         <div class="table-responsive">
-        <table class="table sortTable">
+        <table class="table table-striped table-dark sortTable">
             <thead>
                 <tr>
                     <th scope="col">Item</th>
@@ -80,7 +80,7 @@
             <tbody>
             {% for item in items %}
                 {% if item.user.username == request.user.username %}
-                     {% if item.taken %}
+                     {% if item.picked %}
                         <tr>
                             <th scope="row">
                                 <a class="btn btn-danger" href="/toggle/{{ item.id }}" role="button">X</a>
