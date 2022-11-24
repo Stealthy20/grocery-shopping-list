@@ -63,7 +63,29 @@
         </div>
     </div>
     
-
+ <!-- Delete List Modal -->
+ <div class="modal fade" id="deleteListModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" >Reset the Shopping List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body text-center">
+        <p class="font-weight-bold"> 
+            Are you sure that you want to reset the shopping list?
+            All the items will be removed!
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+        <a class="btn btn-danger" href="{% url 'delete_list' %}">Reset</a>
+    </div>
+    </div>
+    </div>
+</div>
              
 
     {% block content %}

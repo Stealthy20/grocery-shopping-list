@@ -55,7 +55,7 @@ def add_item(request):
                 item.category = category
                 item = form.save()
                 messages.success(request, 'You successfully added the item')
-                return redirect(reverse('add_item'))
+                return redirect('add')
         else:
             messages.error(request, 'You need to add a Category before adding a item to the Shopping List')
             return redirect('add')
@@ -104,4 +104,13 @@ def delete_cat(request, category_id):
     category = get_object_or_404(AddCategory, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully')
+    return redirect('shopping_list')
+
+
+def delete_list(request):
+    items = ShoppingItem.objects.all()
+    items.user = request.user
+    for item in items:
+        if item.user == request.user:
+            item.delete()
     return redirect('shopping_list')
