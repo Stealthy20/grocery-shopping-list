@@ -3,7 +3,7 @@
 {% block content %}
 
 <h1>Add a item to the shopping list</h1>
-<form action="add" method="post">
+<form action="add_item" method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <div>
@@ -14,7 +14,7 @@
       <option value="{{ category.id }}">{{ category.category }}</option>
       {% endfor %}
     </select> 
-    <a class="btn btn-success" href="{% url 'getcat' %}" role="button">Add New Categories</a>   
+    <a class="btn btn-success" href="{% url 'category' %}" role="button">Add New Categories</a>   
   </div> 
       <button class="btn btn-success" type="submit">Add Item</button> 
       <a class="btn btn-secondary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    

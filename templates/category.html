@@ -10,11 +10,11 @@
         {% for category in categories %}
          {% if category.user.username == request.user.username %}
             <li>{{ category.category }}
-                <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCatModal">Delete</a>
+                <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCategoryModal">Delete</a>
             </li>
 
             <!-- Delete Category Modal -->
-            <div class="modal fade" id="deleteCatModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+            <div class="modal fade" id="deleteCategoryModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="/deletecat/{{ category.id }}">Delete</a>
+                    <a class="btn btn-danger" href="/delete_category/{{ category.id }}">Delete</a>
                 </div>
                 </div>
                 </div>
@@ -41,7 +41,7 @@
         
     </ul>
     <a class="btn btn-primary" data-toggle="modal" data-target="#addCatModal">Add Category</a>
-    <a class="btn btn-primary" href="{% url 'add' %}" role="button">Add item to shopping list</a>
+    <a class="btn btn-primary" href="{% url 'add_item' %}" role="button">Add item to shopping list</a>
 </div>
 
 <h4>Add a New Category</h4>

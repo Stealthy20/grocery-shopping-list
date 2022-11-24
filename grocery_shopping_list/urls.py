@@ -20,16 +20,13 @@ from shopping_list import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
-    path('shopping_list', views.get_shoppinglist, name="shopping_list"),
-    path('category', views.category, name="category"),
-    # path('addcat', views.add_categories, name="addcat"),
-    path('add', views.add_item, name='add'),
+    path('shopping_list', views.shopping_list, name="shopping_list"),
+    path('add_item', views.add_item, name='add_item'),
     path('edit/<item_id>', views.edit_item, name='edit'),
-    path(
-        'delete/<str:item_id>/',
-        views.delete_item, name="delete_item"),
-    path('deletecat/<category_id>', views.delete_cat, name='delete_cat'),
-    path('delete_list', views.delete_list, name='delete_list'),
+    path('delete_item/<str:item_id>/', views.delete_item, name="delete_item"),
     path('toggle/<item_id>', views.toggle_item, name='toggle'),
+    path('category', views.category, name="category"),
+    path('delete_category/<category_id>', views.delete_category, name='delete_category'),
+    path('delete_list', views.delete_list, name='delete_list'),
     path('accounts/', include('allauth.urls')),
 ]

@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from django.http import HttpResponse
@@ -17,24 +16,9 @@ def home(request):
 
 
 @login_required(login_url='/accounts/login/')
-def get_shoppinglist(request):
+def shopping_list(request):
     items = ShoppingItem.objects.all()
     return render(request, 'shopping_list.html', {'items': items})
-
-
-@login_required(login_url='/accounts/login/')
-def category(request):
-    categories = Category.objects.all()
-    if request.method == 'POST':
-        form = CategoryForm(request.POST)
-        if form.is_valid():
-            item = form.save(commit=False)
-            item.user = request.user
-            item = form.save()
-            messages.success(request, 'You successfully added the category')
-            return redirect('category')
-    form = CategoryForm()
-    return render(request, 'get_categories.html', {'form': form, 'categories': categories})
 
 
 @login_required(login_url='/accounts/login/')
@@ -50,10 +34,10 @@ def add_item(request):
                 item.category = category
                 item = form.save()
                 messages.success(request, 'You successfully added the item')
-                return redirect('add')
+                return redirect('add_item')
         else:
             messages.error(request, 'You need to add a Category before adding a item to the Shopping List')
-            return redirect('add')
+            return redirect('add_item')
     categories = Category.objects.filter(user=request.user)
     form = ShopItemForm()
     return render(request, 'add_item.html', {'form': form, 'categories': categories})
@@ -80,7 +64,7 @@ def edit_item(request, item_id):
 
 @login_required
 def delete_item(request, item_id):
-    item = get_object_or_404(ShoppingItem, pk=item_id)
+    item = get_object_or_404(ShoppingItem, id=item_id)
     item.delete()
     messages.success(request, 'Item deleted successfully')
     return redirect('shopping_list')
@@ -93,12 +77,27 @@ def toggle_item(request, item_id):
     return redirect('shopping_list')
 
 
+@login_required(login_url='/accounts/login/')
+def category(request):
+    categories = Category.objects.all()
+    if request.method == 'POST':
+        form = CategoryForm(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item = form.save()
+            messages.success(request, 'You successfully added the category')
+            return redirect('category')
+    form = CategoryForm()
+    return render(request, 'category.html', {'form': form, 'categories': categories})
+
+
 @login_required
-def delete_cat(request, category_id):
+def delete_category(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully')
-    return redirect('addcat')
+    return redirect('category')
 
 
 def delete_list(request):
