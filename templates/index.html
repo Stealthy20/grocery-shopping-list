@@ -4,16 +4,28 @@
 
 {% if user.is_authenticated %}
 
+<body>
+    <div class="button">
+        <div class="submit"><h3>Submit</h3></div>
+        <div class="arrow">
+            <div class="top line"></div>
+            <div class="bottom line"></div>
+        </div>
+    </div>
+    <p class="instructions">Hover and then click<p>
+</body>
+
+<!-- 
 <h3>Welcome Back {{ user.username }}</h3>
 <div>
     <p>Hello {{ user.username }} get back to your <a href="{% url 'shopping_list' %}">Shopping List</a>
     </p>
     <a class="btn btn-secondary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
     <a class="btn btn-secondary" href="{% url 'category' %}" role="button">Manage your Catagories</a>    
-</div>
+</div> -->
 
 {% else %}
-<h3>Welcome to Grocery Shopping List!</h3>
+<!-- <h3>Welcome to Grocery Shopping List!</h3>
 <div>
     <p>Hello and welcome to Grocery Shopping List. This is a site where you can create your own shopping list, 
         add your own categories and sort it whatever way you want to.</p>
@@ -22,6 +34,9 @@
     or <a href="{% url 'account_signup' %}">Sign Up</a></p>
     <a class="btn btn-secondary" href="{% url 'account_login' %}" role="button">Log In</a>    
     <a class="btn btn-secondary" href="{% url 'account_signup' %}" role="button">Sign Up</a>   
-</div>
+</div>    -->
+ 
+
+
 {% endif %}
 {% endblock %}
