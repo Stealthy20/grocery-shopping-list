@@ -8,19 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+  
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/9beb937b3c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-white py-4">
+    <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand nav-text">Grocery Shopping List</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            <button class="navbar-toggler " id="nav-toggle-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -94,45 +94,45 @@
 
     
 
-    <footer class="text-center text-white fixed-bottom">
+    <footer class="text-center fixed-bottom">
         <!-- Grid container -->
         <div class="container">
           <!-- Section: Social media -->
           <section class="mb-4">
             <!-- Facebook -->
             <a
-              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              class="btn btn-link btn-floating btn-lg m-1"
               href="#!"
               role="button"
               data-mdb-ripple-color="muted"
-              ><i class="fab fa-facebook-f"></i
+              ><i class="fab fa-facebook-f footer-link"></i
             ></a>
       
             <!-- Twitter -->
             <a
-              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              class="btn btn-link btn-floating btn-lg m-1"
               href="#!"
               role="button"
               data-mdb-ripple-color="muted"
-              ><i class="fab fa-twitter"></i
+              ><i class="fab fa-twitter footer-link"></i
             ></a>
       
       
             <!-- Linkedin -->
             <a
-              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              class="btn btn-link btn-floating btn-lg m-1"
               href="#!"
               role="button"
               data-mdb-ripple-color="muted"
-              ><i class="fab fa-linkedin"></i
+              ><i class="fab fa-linkedin footer-link"></i
             ></a>
             <!-- Github -->
             <a
-              class="btn btn-link btn-floating btn-lg text-muted m-1"
+              class="btn btn-link btn-floating btn-lg m-1"
               href="#!"
               role="button"
               data-mdb-ripple-color="muted"
-              ><i class="fab fa-github"></i></a>
+              ><i class="fab fa-github footer-link"></i></a>
           </section>
           <!-- Section: Social media -->
         </div>
@@ -150,32 +150,32 @@
             info: false,
         });
 
-        function hover() {
-            $(".btn").on("mouseenter", function() {
-                return $(this).addClass("hover");
+        $( document ).ready(function() {
+    
+    // Bounce button
+    
+            $("#bouncebutton").click(function(){
+                const element =  document.querySelector('.bouncebutton');
+                element.classList.add('animated', 'bounce');
+                setTimeout(function() {
+                element.classList.remove('bounce'); 
+                },        2000);
             });
-        }
-
-        function hoverOff() {
-        $(".btn").on("mouseleave", function() {
-            return $(this).removeClass("hover");
-        });
-        }
-
-        function active() {
-            $(".btn").on("click", function() {
-                return $(this).addClass("active");
+                
+                
             });
-        }
 
-        hover();
-        hoverOff();
-        active();
+            const shiners = document.querySelectorAll(".shine");
+            shiners.forEach((shiner) => {
+            shineItUp(shiner);
+            });
 
 
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
 </body>
 </html>

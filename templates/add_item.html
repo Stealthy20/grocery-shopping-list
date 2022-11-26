@@ -2,24 +2,29 @@
 
 {% block content %}
 
-<h1>Add a item to the shopping list</h1>
-<form action="add_item" method="post">
+<div class="d-flex justify-content-center">
+<h4>Add a item to the shopping list</h4>
+</div>
+
+<div class="d-flex justify-content-center">
+<form action="add_item" method="post"class="form-group">
   {% csrf_token %}
   {{ form.as_p }}
   <div>
     Category
     
-  <select name="categories">
+  <select class="form-control" name="categories">
       {% for category in categories %}
       <option value="{{ category.id }}">{{ category.category }}</option>
       {% endfor %}
     </select> 
     <a class="btn btn-success" href="{% url 'category' %}" role="button">Add New Categories</a>   
   </div> 
-      <button class="btn btn-success" type="submit">Add Item</button> 
-      <a class="btn btn-secondary" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
+      <button class="btn btn-success bouncebutton"  id="bouncebutton" type="submit">Add Item</button> 
+      <a class="btn btn-secondary " href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
       
 </form>
+</div>
 
 {% endblock %} -->
 
