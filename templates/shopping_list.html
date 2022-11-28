@@ -22,7 +22,7 @@
                     {% if item.picked == False %}
                     <tr>
                         <td style="width: 10%"><a class="btn btn-success" href="/toggle/{{ item.id }}" role="button">&#x2713;</a></td>
-                        <th scope="row"><a class="shopping-item" href="/edit/{{ item.id }}">{{ item.name }}</a></th>
+                        <th scope="row"><a class="shopping-item" href="/edit/{{ item.id }}">{{ item.item }}</a></th>
                         <td>{{ item.brand }}</td>
                         <td>{{ item.quantity }}</td>
                         <td>{{ item.category }}</td>
@@ -40,14 +40,14 @@
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">{{ item.name }}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">{{ item.item }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body text-center">
                             <p class="font-weight-bold text-uppercase"> 
-                                Are you sure you want to delete {{ item.name }}?
+                                Are you sure you want to delete {{ item.item }}?
                             </p>
                         </div>
                         <div class="modal-footer">
@@ -83,7 +83,7 @@
                      {% if item.picked %}
                         <tr>
                             <td style="width: 10%"><a class="btn btn-secondary" href="/toggle/{{ item.id }}" role="button">X</a></td>
-                            <th scope="row"><a class="shopping-item" href="/edit/{{ item.id }}">{{ item.name }}</a></th>
+                            <th scope="row"><a class="shopping-item" href="/edit/{{ item.id }}">{{ item.item }}</a></th>
                             <td>{{ item.brand }}</td>
                             <td>{{ item.quantity }}</td>
                             <td>{{ item.category }}</td>
@@ -101,14 +101,14 @@
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">{{ item.name }}</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">{{ item.item }}</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body text-center">
                                 <p class="font-weight-bold text-uppercase"> 
-                                    Are you sure you want to delete {{ item.name }}?
+                                    Are you sure you want to delete {{ item.item }}?
                                 </p>
                             </div>
                             <div class="modal-footer">

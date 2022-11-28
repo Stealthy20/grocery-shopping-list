@@ -7,23 +7,24 @@
 </div>
 
 <div class="d-flex justify-content-center">
-<form action="add_item" method="post"class="form-group">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <div>
-    Category
-    
-  <select class="form-control" name="categories">
-      {% for category in categories %}
-      <option value="{{ category.id }}">{{ category.category }}</option>
-      {% endfor %}
-    </select> 
-    <a class="btn btn-success" href="{% url 'category' %}" role="button">Add New Categories</a>   
-  </div> 
-      <button class="btn btn-success bouncebutton"  id="bouncebutton" type="submit">Add Item</button> 
-      <a class="btn btn-secondary " href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
+  <form action="add_item" method="post"class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      Category
       
-</form>
+    <select class="form-field" name="categories">
+        {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.category }}</option>
+        {% endfor %}
+      </select> 
+      <a class="btn btn-global" href="{% url 'category' %}" role="button">Add New</a>   
+    </div> 
+    <div class="btn-div">
+        <button class="btn btn-global bouncebutton "  id="bouncebutton" type="submit">Add Item</button> 
+        <a class="btn btn-global" href="{% url 'shopping_list' %}" role="button">Back</a>    
+    </div>        
+  </form>
 </div>
 
 {% endblock %} -->

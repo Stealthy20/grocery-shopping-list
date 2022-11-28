@@ -8,6 +8,10 @@ body {
 	background-color: #ffffff;
 }
 
+h4 {
+    margin-bottom: 20px;
+}
+
 /* Header Styling */
 
 .navbar {
@@ -55,32 +59,43 @@ footer {
     line-height: 1;
     font-weight: 400;
     padding: .7rem 1.5rem;
-    border-radius: 0.1275rem
+    border-radius: 0.1275rem;
+}
+
+.btn-div {
+    margin-top: 20px;
+}
+
+.btn-global {
+    background-color: #212529;
+    color: #ffffff;
+    border-radius: 25px;
 }
 
 .toast {
-    transition: 0.32s all ease-in-out
+    transition: 0.32s all ease-in-out;
 }
 
 .toast-container--fade {
     right: 0;
-    bottom: 0
+    bottom: 0;
 }
 
 .toast-container--fade .toast-wrapper {
-    display: inline-block
+    display: inline-block;
 }
 
 .toast.fade-init {
-    opacity: 0
+    opacity: 0;
 }
 
 .toast.fade-show {
-    opacity: 1
+    opacity: 1;
 }
 
 .toast.fade-hide {
-    opacity: 0
+    opacity: 0;
+    color: #ffffff;
 }
 
 
@@ -91,7 +106,8 @@ footer {
 	color: #212529;
 }
 
-.form-control {
-
-	border-color: #212529;
+.form-field {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
 }
