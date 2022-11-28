@@ -72,6 +72,10 @@ footer {
     border-radius: 25px;
 }
 
+.btn-global:hover{
+    color: #ffffff;
+}
+
 .toast {
     transition: 0.32s all ease-in-out;
 }
@@ -110,4 +114,23 @@ footer {
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
+}
+
+.category-div {
+    max-width: 5000px;
+    margin: auto;
+}
+
+.category-list {
+    list-style: none;
+    font-weight: 500;
+}
+
+.btn-category {
+    margin-left: 5px;
+    height: 30px;
+}
+
+.btn-del-category {
+    margin-left: 20px;
 }

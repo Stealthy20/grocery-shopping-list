@@ -2,61 +2,57 @@
 
 {% block content %}
 
-<h4>Add a New Category</h4>
-<form action="category" method="post">
+<h4 class="d-flex justify-content-center">Categories</h4>
+<form class="d-flex justify-content-center p-2" action="category" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <div>
-        <p>
-          <button class="btn btn-success bouncebutton"  id="bouncebutton"type="submit">Add Catgegory</button> 
-      
-          <a class="btn btn-secondary" href="{% url 'category' %}" role="button">Back to Categories</a>
-        </p> 
-    </div>
+    <button class="btn btn-global btn-category p-2 bouncebutton"  id="bouncebutton"type="submit">Add</button> 
 </form>
 
 
-<div>
-    <h4>My Categories</h4>
-    <ul class="list-group">
+<div class="d-flex flex-column align-items-center">
+   
+    
+    <ul class="list-group p-2">
         
         {% for category in categories %}
          {% if category.user.username == request.user.username %}
-            <li>{{ category.category }}
-                <a class="btn btn-danger" data-toggle="modal" data-target="#deleteCategoryModal">Delete</a>
+            <li class="p-2 category-list">{{ category.category }}
+                <a class="btn btn-global p-2 btn-del-category" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal{{ category.id }}" role="button">Delete</a>
             </li>
 
             <!-- Delete Category Modal -->
-            <div class="modal fade" id="deleteCategoryModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+            <div class="modal fade" id="deleteCategoryModal{{ category.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Delete {{ category.category }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body text-center">
-                    <p class="font-weight-bold text-uppercase"> 
+                    <p class="font-weight-bold"> 
                         Are you sure you want to delete {{ category.category }}?
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                    <a class="btn btn-danger" href="/delete_category/{{ category.id }}">Delete</a>
+                    <button type="button" class="btn btn-global" data-bs-dismiss="modal">Close</button>
+                    <a class="btn btn-global" href="/delete_category/{{ category.id }}">Delete</a>
                 </div>
                 </div>
                 </div>
             </div>
+            
 
         {% endif %}
         {% endfor %}
-        
+        <a class="btn btn-global btn-div" href="{% url 'add_item' %}" role="button">Add items to shopping list</a>
     </ul>
-  
-    
-    <a class="btn btn-secondary" href="{% url 'add_item' %}" role="button">Add items to shopping list</a>
 </div>
+    
+    
+
 
 
 

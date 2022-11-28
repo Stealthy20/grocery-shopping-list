@@ -20,3 +20,4 @@ class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
         fields = ['category']
+        widgets = {'category': forms.TextInput(attrs={'class': 'form-field'})}
