@@ -176,3 +176,8 @@ footer {
     border-width: 1px;
     border-radius: 5px;
 }
+
+.link {
+    text-decoration: underline;
+    color: #212529;
+}
