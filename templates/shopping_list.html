@@ -23,7 +23,9 @@
         </thead>
         <tbody>
             {% for item in items %}
+
                 {% if item.user.username == request.user.username %}
+
                     {% if item.picked == False %}
                     <tr>
                         <td style="width: 10%"><a class="btn btn-global" href="/toggle/{{ item.id }}" role="button">&#x2713;</a></td>
@@ -64,8 +66,11 @@
                         </div>
                         </div>
                     </div>
+
                     {% endif %}
+
                 {% endif %}
+                
             {% endfor %}
         
             </tbody>
@@ -108,7 +113,7 @@
                         </tr>
 
                          <!-- Delete Item Modal -->
-                         
+
                         <div class="modal fade" id="deleteItemModal{{ item.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">

@@ -2,28 +2,30 @@
 
 {% block content %}
 
-<h4 class="d-flex justify-content-center">Edit Item!</h4>
-<div class="d-flex justify-content-center">
-  <form  method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <div>
-          Category
-          
-        <select class="form-field" name="categories">
-            {% for category in categories %}
-            <option class="option" value="{{ category.id }}">{{ category.category }}</option>
-            {% endfor %}
-          </select> 
-        </div> 
-      <div class="btn-div">
-          <p>
-          <button class="btn btn-global" type="submit">Update Item</button> 
-          <a class="btn btn-global" href="{% url 'shopping_list' %}">Back to Shopping List</a>
-          </p> 
-      </div>
-  </form>
-</div>
+<!-- Form to add edit items-->
+
+  <h4 class="d-flex justify-content-center">Edit Item!</h4>
+  <div class="d-flex justify-content-center">
+    <form  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            Category
+            
+          <select class="form-field" name="categories">
+              {% for category in categories %}
+              <option class="option" value="{{ category.id }}">{{ category.category }}</option>
+              {% endfor %}
+            </select> 
+          </div> 
+        <div class="btn-div">
+            <p>
+            <button class="btn btn-global" type="submit">Update Item</button> 
+            <a class="btn btn-global" href="{% url 'shopping_list' %}">Back to Shopping List</a>
+            </p> 
+        </div>
+    </form>
+  </div>
 
 {% endblock %}
 
