@@ -36,7 +36,7 @@ The planning of the project is broken into 5 planes,
 
 #### **User Stories**
 - As a user, I want to be able to sign up, so that I can have my personal shopping list and categories.
-- As a user, I want to be able to se confirmations when tasks are done, so that i can confirm that they where successful.
+- As a user, I want to be able to see confirmations when tasks are done, so that I can confirm that they were successful.
 - As a user, I want to be able to add multiple items, so that i don't need to return to the list page everytime and save time.
 - As a user, I want to be able to add a brand to my item, so that i specify what item i want.
 - As a user, I want to be able to add a quantity to my item, so that know how much i need.
