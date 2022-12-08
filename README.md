@@ -173,32 +173,25 @@ So this is my basic layout before starting the project.
 
 - [Python](https://www.python.org/) 
     - The following Python modules were used on this project, 
-        - asgiref==3.4.1
-        - boto3==1.18.26
-        - botocore==1.21.26
-        - dj-database-url==0.5.0
-        - Django==3.2.5
-        - django-allauth==0.41.0
-        - django-countries==7.2.1
-        - django-crispy-forms==1.12.0
-        - django-storages==1.11.1
-        - gunicorn==20.1.0
-        - jmespath==0.10.0
-        - oauthlib==3.1.1
-        - Pillow==8.3.1
-        - psycopg2-binary==2.9.1
-        - pylint-django==2.4.4
-        - pylint-plugin-utils==0.6
-        - python3-openid==3.2.0
-        - pytz==2021.1
-        - requests-oauthlib==1.3.0
-        - s3transfer==0.5.0
-        - sqlparse==0.4.1
-        - stripe==2.60.0
+    - asgiref==3.5.2
+    - cloudinary==1.30.0
+    - dj-database-url==1.0.0
+    - dj3-cloudinary-storage==0.0.6
+    - Django==3.2.16
+    - django-allauth==0.51.0
+    - django-filter==22.1
+    - gunicorn==20.1.0
+    - oauthlib==3.2.2
+    - psycopg2==2.9.5
+    - PyJWT==2.6.0
+    - python3-openid==3.2.0
+    - pytz==2022.6
+    - requests-oauthlib==1.3.1
+    - sqlparse==0.4.3
 
-- [Heroku Postgres](https://www.heroku.com/postgres)
+- [ElephatnSQL](https://www.elephantsql.com/)
 
-- [AWS S3](https://aws.amazon.com/)
+- [Allauth](https://django-allauth.readthedocs.io/en/latest/)
  
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
@@ -223,8 +216,6 @@ So this is my basic layout before starting the project.
 - [Gitpod](https://www.gitpod.io/)
 
 - [Balsamiq](https://balsamiq.com/)
-
-- [AutoPrefixer](https://autoprefixer.github.io/)
 
 - [Grammarly](https://www.grammarly.com/)
 
