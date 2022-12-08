@@ -4,6 +4,18 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
 
+    """
+    Category Model
+    -----------
+    Model for Users Item
+    Attributes:
+    -----------
+    user:
+        Link to User model
+    Category:
+        Name of the category used for ShoppingItem
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     category = models.CharField(max_length=50, blank=False)
 
@@ -15,6 +27,26 @@ class Category(models.Model):
 
 
 class ShoppingItem(models.Model):
+
+    """
+    ShoppingItem Model
+    -----------
+    Model for Users Item
+    Attributes:
+    -----------
+    user:
+        Link to User model
+    item:
+        Name of the item in the shopping list
+    brand:
+        optional field to clarify the brand of the item
+    quantity:
+        Charfield to put in the amount of that product you need, ex 1kg. 
+    category:
+        Link to the Category Model
+    picked:
+        Boolean field to check if item is picked or not
+    """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True,)
     item = models.CharField(max_length=50, blank=False)

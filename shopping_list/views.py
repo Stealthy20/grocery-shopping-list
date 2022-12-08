@@ -10,19 +10,27 @@ from .forms import ShopItemForm
 from .forms import CategoryForm
 
 
-
 def home(request):
+
+    """ A View for rendering home page"""
+
     return render(request, 'index.html')
 
 
 @login_required(login_url='/accounts/login/')
 def shopping_list(request):
+
+    """ A View for rendering items to shopping list """
+
     items = ShoppingItem.objects.all()
     return render(request, 'shopping_list.html', {'items': items})
 
 
 @login_required(login_url='/accounts/login/')
 def add_item(request):
+
+    """ A View to render the form for the user to add new items """
+
     if request.method == 'POST':
         form = ShopItemForm(request.POST)
         category_id = request.POST.get("categories")
@@ -45,6 +53,9 @@ def add_item(request):
 
 @login_required(login_url='/accounts/login/')
 def edit_item(request, item_id):
+
+    """ A View to render the form for the user to edit items """
+
     item = get_object_or_404(ShoppingItem, id=item_id)
     if request.method == 'POST':
         form = ShopItemForm(request.POST, instance=item)
@@ -61,9 +72,10 @@ def edit_item(request, item_id):
     return render(request, 'edit_item.html', {'form': form, 'categories': categories})
 
 
-
-@login_required
 def delete_item(request, item_id):
+
+    """ A View for the user to delete items"""
+
     item = get_object_or_404(ShoppingItem, id=item_id)
     item.delete()
     messages.success(request, 'Item deleted successfully')
@@ -71,6 +83,9 @@ def delete_item(request, item_id):
 
 
 def toggle_item(request, item_id):
+
+    """ A View for the user to toggle items """
+
     item = get_object_or_404(ShoppingItem, id=item_id)
     item.picked = not item.picked
     item.save()
@@ -79,6 +94,9 @@ def toggle_item(request, item_id):
 
 @login_required(login_url='/accounts/login/')
 def category(request):
+
+    """ A View to render the form for the user to ad new categories  """
+
     categories = Category.objects.all()
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -94,6 +112,9 @@ def category(request):
 
 @login_required
 def delete_category(request, category_id):
+
+    """ A View for the user to delete categories """
+
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
     messages.success(request, 'Category deleted successfully')
@@ -101,6 +122,9 @@ def delete_category(request, category_id):
 
 
 def delete_list(request):
+
+    """ A View for the user to delete all items in the list"""
+
     items = ShoppingItem.objects.all()
     items.user = request.user
     for item in items:
