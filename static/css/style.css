@@ -5,7 +5,7 @@
 }
 
 body {
-	background-color: #ffffff;
+	background-color: #FAFAFA;
 }
 
 h4 {
@@ -21,16 +21,16 @@ h4 {
 }
 
 .nav-text {
-	color: #ffffff;
+	color: #FAFAFA;
 	line-height: 50px;
 }
 
 .nav-link {
-	color: #ffffff;
+	color: #FAFAFA;
 }
 
 #nav-toggle-button{
-	border-color: #ffffff;
+	border-color: #FAFAFA;
 }
 
 .navbar-toggler-icon {
@@ -44,7 +44,7 @@ footer {
 }
 
 .footer-link {
-	color: #ffffff;
+	color: #FAFAFA;
 	font-size: 20px;
 }
 
@@ -77,12 +77,12 @@ footer {
 
 .btn-global {
     background-color: #212529;
-    color: #ffffff;
+    color: #FAFAFA;
     border-radius: 25px;
 }
 
 .btn-global:hover{
-    color: #ffffff;
+    color: #FAFAFA;
 }
 
 .toast {
@@ -108,7 +108,7 @@ footer {
 
 .toast.fade-hide {
     opacity: 0;
-    color: #ffffff;
+    color: #FAFAFA;
 }
 
 
@@ -196,6 +196,6 @@ footer {
 }
 
 select {
-    color: #ffffff;
+    color: #FAFAFA;
     background: #212529;
     }
