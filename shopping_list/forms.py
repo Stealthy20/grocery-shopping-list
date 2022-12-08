@@ -4,6 +4,9 @@ from .models import Category
 
 
 class ShopItemForm(forms.ModelForm):
+
+    """ Form to add and edit items """
+
     class Meta:
         model = ShoppingItem
         fields = ['item', 'brand', 'quantity']
@@ -17,6 +20,9 @@ class ShopItemForm(forms.ModelForm):
 
 
 class CategoryForm(forms.ModelForm):
+
+    """ Form to add categories"""
+
     class Meta:
         model = Category
         fields = ['category']

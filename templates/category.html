@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<!-- Form to add new categories-->
+
 <h4 class="d-flex justify-content-center">Categories</h4>
 <form class="d-flex justify-content-center p-2" action="category" method="post">
     {% csrf_token %}
@@ -9,12 +11,10 @@
     <button class="btn btn-global btn-category p-2 bouncebutton"  id="bouncebutton"type="submit">Add</button> 
 </form>
 
+<!-- List to display the users categories -->
 
 <div class="d-flex flex-column align-items-center">
-   
-    
     <ul class="list-group p-2">
-        
         {% for category in categories %}
          {% if category.user.username == request.user.username %}
             <li class="p-2 category-list">{{ category.category }}
@@ -22,6 +22,7 @@
             </li>
 
             <!-- Delete Category Modal -->
+
             <div class="modal fade" id="deleteCategoryModal{{ category.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -43,8 +44,6 @@
                 </div>
                 </div>
             </div>
-            
-
         {% endif %}
         {% endfor %}
         <a class="btn btn-global btn-div" href="{% url 'add_item' %}" role="button">Add items to shopping list</a>

@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+    <!-- Button to delete all items in the list -->
+
     <a class="btn btn-global" data-bs-toggle="modal" data-bs-target="#deleteListModal">Reset List</a>
+
+    <!-- Table to display all the users items that they need to pick -->
+    
     <h4>Items to Pick</h4>
-  
     <div class="table-responsive">
     <table class="table sortTable">
         <thead class="table-dark">
@@ -35,7 +40,9 @@
                             </div>
                         </td>
                     </tr>
+
                      <!-- Delete Item Modal -->
+
                      <div class="modal fade" id="deleteItemModal{{ item.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -64,7 +71,10 @@
             </tbody>
         </table>
     </div>
-            <h4>Items Picked</h4>
+
+    <!-- Table to display all the users items that they already picked -->
+
+    <h4>Items Picked</h4>
         <div class="table-responsive">
         <table class="table sortTable">
             <thead class="table-dark">
@@ -80,7 +90,7 @@
             <tbody>
             {% for item in items %}
                 {% if item.user.username == request.user.username %}
-                     {% if item.picked %}
+                    {% if item.picked %}
                         <tr>
                             <td style="width: 10%"><a class="btn btn-global" href="/toggle/{{ item.id }}" role="button">X</a></td>
                             <th scope="row"><a class="shopping-item" href="/edit/{{ item.id }}">{{ item.item }}</a></th>
@@ -96,7 +106,9 @@
                                 </div>
                             </td>
                         </tr>
+
                          <!-- Delete Item Modal -->
+                         
                         <div class="modal fade" id="deleteItemModal{{ item.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -118,13 +130,11 @@
                             </div>
                             </div>
                         </div>
-                        {% endif %}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
     </div>
-
     
-
-    {% endblock %}
+{% endblock %}
