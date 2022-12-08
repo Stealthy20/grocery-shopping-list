@@ -1,108 +1,430 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Grocery Shopping List**
 
-Welcome Stealthy20,
+[Live Site]()
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive view of Nourish and Lift on all devices](")
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## **Introduction**
+Welcome to Grocery Shopping List.
 
-## Gitpod Reminders
+Grocery Shopping List is my fourth and second to last project, part of the Code Institute, Full Stack Web Developer Course.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+The purpose of this website is to make a smart and easy to use shopping list that the user can modify to suit their shopping behaviours.
+The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Allauth handles the user registration and login, and ElephantSQL as a relational database.
+---
 
-`python3 -m http.server`
+## **UXD - User Experience Design**
 
-A blue button should appear to click: _Make Public_,
+The planning that went into this project largely emerged from my own dissatisfaction with shopping apps.
 
-Another blue button should appear to click: _Open Browser_.
+So with that in mind and with some interviews i made the choice to design a easy to use app.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The planning of the project is broken into 5 planes,
 
-A blue button should appear to click: _Make Public_,
+- The Strategy Plane
+- The Scope Plane
+- The Structure Plane
+- The Skeleton Plane
+- The Surface Plane
+---
 
-Another blue button should appear to click: _Open Browser_.
+## **The Strategy Plane**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### **Creator Goals**
+- As a creator, I want the site to be easy to navigate.
+- As a creator, I want to allow users to sort the list after their needs.
 
-To log into the Heroku toolbelt CLI:
+#### **User Stories**
+- As a user, I want to be able to sign up, so that I can have my personal shopping list and categories.
+- As a user, I want to be able to se confirmations when tasks are done, so that i can confirm that they where successful.
+- As a user, I want to be able to add multiple items, so that i don't need to return to the list page everytime and save time.
+- As a user, I want to be able to add a brand to my item, so that i specify what item i want.
+- As a user, I want to be able to add a quantity to my item, so that know how much i need.
+- As a user, I want to be able to edit items, so that i can change it without deleting.
+- As a user, I want to be able to add my own categories, so that i personalize it after my needs.
+- As a user, I want to be able to manage my categories, so that i add more and delete the ones i don't want anymore.
+- As a user, I want to be able to toggle the items as i pick them up, so that i can see what items are left to pick.
+- As a user, I want to be able to sort my list the way i want, so that i can specialize it after my needs.
+- As a user, I want to be able to delete the list, so that i can start from scratch the next time.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+My user stories where obtained from my own personal experiences and interviews. 
 
 ---
 
-Happy coding!
+## **The Scope Plane**
+
+To be sure that my project where launched with a ready to use site i opted to divide my project into three phases.
+
+**Phase 1**
+- A project that would be good enough to use.
+    - Home Page with an introduction .
+    - Navbar allowing the user to navigate to different pages.
+    - Shopping list view to see the items. 
+    - Page to add and edit items.
+    - The ability to delete items and list.
+    - Sign up and log in function
+
+**Phase 2**
+- Building upon the Phase 1 project with additional features.
+    - User specific categories
+    - Modals to ensure the user are sure to delete items
+    - Keep picked items under a new header to separate the items
+
+**Phase 3**
+- My final planned phase would focus on user registration and accounts
+    - Sign up with social media accounts
+    - Password recovery
+---
+
+## **The Structure Plane**
+
+#### **Colors**
+
+For this project i choosed to only work with two different colors. This because i wanted the site to feel clean and focus should be on the functionality.
+
+#212529
+- I choosed this color for all all details on the page, such as navbar, footer, buttons and the headings of the tables. I like the dark grey blueish color. 
+The color is taken from the bootstrap dark color the the table head. 
+
+#FAFAFA
+- The off-white color was used for the background color and for text. The off-white color have a nice contrast to my other color without being to bright as a background. 
+
+#### **Fonts**
+
+- For this project i opted to go with the standard font. This because it suited the easy and minimalistic approach i went in this project.
+
+#### **Images**
+
+
+#### **Key Models**
+
+**ShoppingItem**
+- The Shopping item model is the main model to add items to the shopping list.
+- It hold all the important information about the item. 
+- The item is connected to the imported user model.
+
+**Category**
+- The category model holds the information about the category
+- The category is connected to the imported user model, to make sure that the user have their own categories.
+---
+
+## **The Skeleton Plane**
+
+I made some changes as the project advanced, but this was my plan going into the project. 
+I wanted the computer and mobile version to be as close to eachother as possible. 
+
+So this is my basic layout before starting the project.
+
+[Site Wireframe](docs/wireframes.JPG)
+---
+
+## **The Surface Plane**
+
+### **Features**
+
+*Features present across the project,*
+
+**Navigation Bar**
+- Navbar is implemented on every page and is fully responsive across all resolutions.
+- Users can navigate across the site freely.
+- Users shopping have the cost of the current shopping basket display on large screen sizes.
+
+![Project Navigation Bar](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/navbar.png "Image of the navigation bar")
+
+**Introduction**
+- Home page features an introduction to notify users to welcome them and explain the purpose of the site.
+
+![Project Introduction](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/introduction.png "Image of the Introduction")
+
+**Store Page**
+- Store page offer products on large resolutions in a row of three. Images are large to attract the user's attention, and clicking the image will redirect the user to the product detail page.
+
+![Products](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/shop.png "Image of the products in the store")
+
+**Search Functionality**
+- Users can take advantage of the search function within the navigation bar to search for products or descriptions.
+- Search results are shown in a simple format with a link to redirect to the general store page.
+
+![Search Results](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/search.png "Image of the search results")
+
+**Reviews**
+- Users can choose to view the reviews left by users for a specific product.
+- Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
+- User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
+
+![Reviews](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/reviews.png "Image of the reviews section")
+
+**Toasts**
+- Almost all actions provide feedback to the user via the bootstrap toasts written to provide user feedback.
+- Users shopping can view the current items within the bag and total cost.  The cost of delivery is visible and the user is told how much they need to spend to get free delivery?
+- At the bottom of the toast is a link to the checkout page.
+
+![Toasts](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/toasts.png "Image of the toasts.")
+
+**Shopping Bag**
+- The shopping bag page is fully responsive, showing users a picture of the item, name, price per unit, and total price.
+- Users can also choose to increase/decrease the number of items in their bag, click the update button to have the prices update.
+- user can click the remove link and have all the items within the bag removed, regardless of quantity.
+- At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
+
+
+![Shopping Bag Page](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/shopping-bag.png "Image of the the shopping bag page with 2 items")
+
+**Checkout Overlay**
+- Users who checkout will see a simple overlay with a spinning icon while the payment is processed.
+
+![Loading Overlay](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/overlay.png "Image of the the loading overlay")
+
+**Social Media Links**
+- Every page throughout the project has a footer with social media links. 
+- Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
+
+![Social Media Icons](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/social.png "Image of the the social media icons in the footer")
+
+---
+
+## **Technologies Used**
+
+- [Python](https://www.python.org/) 
+    - The following Python modules were used on this project, 
+        - asgiref==3.4.1
+        - boto3==1.18.26
+        - botocore==1.21.26
+        - dj-database-url==0.5.0
+        - Django==3.2.5
+        - django-allauth==0.41.0
+        - django-countries==7.2.1
+        - django-crispy-forms==1.12.0
+        - django-storages==1.11.1
+        - gunicorn==20.1.0
+        - jmespath==0.10.0
+        - oauthlib==3.1.1
+        - Pillow==8.3.1
+        - psycopg2-binary==2.9.1
+        - pylint-django==2.4.4
+        - pylint-plugin-utils==0.6
+        - python3-openid==3.2.0
+        - pytz==2021.1
+        - requests-oauthlib==1.3.0
+        - s3transfer==0.5.0
+        - sqlparse==0.4.1
+        - stripe==2.60.0
+
+- [Heroku Postgres](https://www.heroku.com/postgres)
+
+- [AWS S3](https://aws.amazon.com/)
+ 
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+
+- [Bootstrap](https://getbootstrap.com/)
+
+- [jQuery](https://jquery.com/)
+
+- [JavaScript](https://www.javascript.com/)
+
+- [Google Fonts](https://fonts.google.com/)
+
+- [Font Awesome](https://fontawesome.com/)
+
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+
+- [Github](https://github.com/)
+
+- [Git](https://git-scm.com/)
+
+- [Gitpod](https://www.gitpod.io/)
+
+- [Balsamiq](https://balsamiq.com/)
+
+- [AutoPrefixer](https://autoprefixer.github.io/)
+
+- [Grammarly](https://www.grammarly.com/)
+
+---
+
+## **Testing**
+
+Link to the Testing Document
+- [TESTING.md](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/TESTING.md)
+---
+
+## **Deployment**
+
+The master branch of this repository is the most current version and has been used for the deployed version of the site.
+
+The Code Institiue student template was used to create this project.
+
+[Code Institute Full Template](https://github.com/Code-Institute-Org/gitpod-full-template)
+
+- Click the *Use This Template* button.
+- Give your repository a name, and description if you wish.
+- Click the *Create Repository from Template* to create your repository. 
+- Click the *Gitpod* button to create a gitpod workspace, this can take a few minutes.
+- When working on project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one.
+Use the following commands to commit your work, 
+- `git add . ` - adds all modified files to a staging area.
+- `git commit -m "A short message exlaining your commit"` - commits all changes to a local repository.
+- `git push` - pushes all your commited changes to your Github repository.
+
+**Requirements**
+
+- [Python 3](https://www.python.org/downloads/)
+- [Pip](https://pypi.org/project/pip/)
+- [Git](https://git-scm.com/)
+- [AWS S3](https://aws.amazon.com/)
+
+**Creating a Clone**
+
+1. From the repository, click *Code*
+2. In the *Clone >> HTTPS* section, copy the clone URL for the repository
+3. In your local IDE open Git Bash
+4. Change the current working directory to the location where you want the cloned directory to be made
+5. Type `git clone`, and then paste the URL you copied in Step 2 - ``git clone https://github.com/Harry-Leepz/Nourish-and-Lift.git``
+6. Set the following values in a `env.py` file.
+```
+import os
+
+os.environ.setdefault("SECRET_KEY", "<app secret key of your choice>")
+os.environ.setdefault("DEVELOPMENT", "True")
+os.environ.setdefault('STRIPE_PUBLIC_KEY', '<key generated by Stripe>')
+os.environ.setdefault('STRIPE_SECRET_KEY', '<key generated by Stripe>')
+os.environ.setdefault('STRIPE_WH_SECRET', '<key generated by Stripe>')
+```
+
+- Stripe keys are generated by Stripe, each individual have their own unique key values.
+- *PLEASE MAKE SURE NEVER TO PUBLISH THESE KEYS, ADD THE `env.py` TO A `.gitignore` TO AVOID PUSHING KEYS TO GITHUB.*
+7. Install the project requirements - `pip3 install requirements.txt`
+8. Apply database migrations - `python manage.py migrate`
+9. Create a superuser - `python manage.py createsuperuser`
+10. The project can be run with the following - `python manage.py runserver`
+
+**Heroku Deployment**
+
+1. Log into Heroku
+2. Create a new app, choose a location closest to you
+3. Search for Heroku Postgres from the resources tab and add to your project
+4. Make sure to have `dj_database_url` and `psycopg2` installed.
+```
+pip3 install dj_database_url
+pip3 install psycopg2
+```
+5. Login to the Heroku CLI - `heroku login -i`
+6. Run migrations on Heroku Postgres - `heroku run python manage.py migrate`
+7. Create a superuser - `python manage.py createsuperuser`
+8. Install `gunicorn` - `pip3 install gunicorn`
+9. Create a requirements.txt file - `pip3 freeze > requirements.txt`
+10. Create a `Procfile` (note the capital P), and add the following,
+```
+web: gunicorn moose_juice.wsgi:application
+```
+11. Disable Heroku from collecting static files - `heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>`
+12. Add the hostname to project settings.py file
+```
+ALLOWED_HOSTS = ['<you-app-name>.herokuapp.com', 'localhost']
+
+```
+13. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing `connect`
+14. In Heroku, within settings, under config vars select `Reveal config vars`
+15. Add the following, 
+```
+AWS_ACCESS_KEY_ID =	<your variable here>
+AWS_SECRET_ACCESS_KEY =	<your variable here>
+DATABASE_URL =	<added by Heroku when Postgres installed>
+DISABLE_COLLECTSTATIC =	1 
+EMAIL_HOST_PASS = <your variable here>
+EMAIL_HOST_USER = <your variable here>
+SECRET_KEY = <your variable here>
+STRIPE_PUBLIC_KEY = <your variable here>
+STRIPE_SECRET_KEY = <your variable here>
+STRIPE_WH_SECRET = <different from env.py>
+USE_AWS = True
+```
+16. Go back to the Deploy tab and under Automatic deploys choose `Enable Automatic Deploys`
+17. Back in your CLI add, commit and push your changes and Heroku will automatically deploy your app
+```
+git add .
+git commit -m "Initial commit"
+git push
+```
+18. Your deployed site can be launched by clicking `Open App` from its page within Heroku.
+
+**AWS S3 Bucket setup**
+1. Create an Amazon AWS account
+2. Search for S3 and create a new bucket
+    - Allow public access
+3. Under Properties > Static website hosting
+    - Enable
+    - index.html as index.html
+    - save
+4. Under Permissions > CORS use the following:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+5. Under Permissions > Bucket Policy:
+    - Generate Bucket Policy and take note of Bucket ARN
+    - Chose S3 Bucket Policy as Type of Policy
+    - For Principal, enter *
+    - Enter ARN noted above
+    - Add Statement
+    - Generate Policy
+    - Copy Policy JSON Document
+    - Paste policy into Edit Bucket policy on the previous tab
+    - Save changes
+6. Under Access Control List (ACL):
+    - For Everyone (public access), tick List
+    - Accept that everyone in the world may access the Bucket
+    - Save changes
+
+**AWS IAM (Identity and Access Management) setup**
+1. From the IAM dashboard within AWS, select User Groups:
+    - Create a new group
+    - Click through and Create Group
+2. Select Policies:
+    - Create policy
+    - Under JSON tab, click Import managed policy
+    - Choose AmazongS3FullAccess
+    - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+    - Click next step and go to Review policy
+    - Give the policy a name and description of your choice
+    - Create policy
+3. Go back to User Groups and choose the group created earlier
+    - Under Permissions > Add permissions, choose Attach Policies and select the one just created
+    - Add permissions
+4. Under Users:
+    - Choose a user name 
+    - Select Programmatic access as the Access type
+    - Click Next
+    - Add the user to the Group just created
+    - Click Next and Create User
+5. Download the `.csv` containing the access key and secret access key.
+    - **THE `.csv` FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN.**
+
+**Connecting Heroku to AWS S3**
+1. Install boto3 and django-storages
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+2. Add the values from the `.csv` you downloaded to your Heroku Config Vars under Settings:
+3. Delete the `DISABLE_COLLECTSTATIC` variable from your Cvars and deploy your Heroku app
+4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+    - **PLEASE MAKE SURE `media` AND `static` FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS**
+
+
+---
