@@ -115,7 +115,7 @@ I wanted the computer and mobile version to be as close to eachother as possible
 
 So this is my basic layout before starting the project.
 
-[Site Wireframe](docs/wireframes.JPG)
+![Site Wireframe](docs/wireframes.JPG "Image of the wireframes")
 ---
 
 ## **The Surface Plane**
@@ -126,61 +126,47 @@ So this is my basic layout before starting the project.
 
 **Navigation Bar**
 - Navbar is implemented on every page and is fully responsive across all resolutions.
-- Users can navigate across the site freely.
-- Users shopping have the cost of the current shopping basket display on large screen sizes.
+- Users can navigate across the site freely as long as they are signed in.
 
-![Project Navigation Bar](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/navbar.png "Image of the navigation bar")
+![Project Navigation Bar](docs/navbar.png "Image of the navigation bar")
 
 **Introduction**
 - Home page features an introduction to notify users to welcome them and explain the purpose of the site.
 
-![Project Introduction](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/introduction.png "Image of the Introduction")
+![Project Introduction](docs/intro.png "Image of the Introduction")
 
-**Store Page**
-- Store page offer products on large resolutions in a row of three. Images are large to attract the user's attention, and clicking the image will redirect the user to the product detail page.
+**Add item page**
+- Add item page, where the user insert all the information about the item they want to add to the list.
 
-![Products](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/shop.png "Image of the products in the store")
+![Add Item](docs/additem.png "Image of add item page")
 
-**Search Functionality**
-- Users can take advantage of the search function within the navigation bar to search for products or descriptions.
-- Search results are shown in a simple format with a link to redirect to the general store page.
+**Edit item page**
+- Users can edit already added items to the list.
 
-![Search Results](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/search.png "Image of the search results")
+![Edit Item](docs/edititem.png "Image of the edit item page")
 
-**Reviews**
-- Users can choose to view the reviews left by users for a specific product.
-- Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
-- User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
+**Category**
+- Users can add and manage their categories in this page
 
-![Reviews](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/reviews.png "Image of the reviews section")
+![Category](docs/categories.png "Image of category page")
 
-**Toasts**
-- Almost all actions provide feedback to the user via the bootstrap toasts written to provide user feedback.
-- Users shopping can view the current items within the bag and total cost.  The cost of delivery is visible and the user is told how much they need to spend to get free delivery?
-- At the bottom of the toast is a link to the checkout page.
+**Shopping List**
+- The user can view their added items in this list view.
+- The user can easy see what items they have picked and what is left to pick.
+- All the table heads are sortable.
+- A button to reset the list when the user are done.
 
-![Toasts](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/toasts.png "Image of the toasts.")
+![Shopping List](docs/shoppinglist.png "Image of Shopping List page.")
 
-**Shopping Bag**
-- The shopping bag page is fully responsive, showing users a picture of the item, name, price per unit, and total price.
-- Users can also choose to increase/decrease the number of items in their bag, click the update button to have the prices update.
-- user can click the remove link and have all the items within the bag removed, regardless of quantity.
-- At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
+**Delete Modal**
+- A modal to ensure that the user are sure to delete the item or list.
 
+![Delete Modal](docs/modal.png "Image of the delete modal")
 
-![Shopping Bag Page](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/shopping-bag.png "Image of the the shopping bag page with 2 items")
+**Footer**
+- Footer with social media links that opens in new tabs.
 
-**Checkout Overlay**
-- Users who checkout will see a simple overlay with a spinning icon while the payment is processed.
-
-![Loading Overlay](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/overlay.png "Image of the the loading overlay")
-
-**Social Media Links**
-- Every page throughout the project has a footer with social media links. 
-- Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
-
-![Social Media Icons](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/social.png "Image of the the social media icons in the footer")
-
+![Footer](docs/footer.png "Image of the footer")
 ---
 
 ## **Technologies Used**
