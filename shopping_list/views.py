@@ -4,10 +4,8 @@ from django.views import generic, View
 from django.http import HttpResponse
 from django.contrib import messages
 import django_filters
-from .models import ShoppingItem
-from .models import Category
-from .forms import ShopItemForm
-from .forms import CategoryForm
+from .models import ShoppingItem, Category
+from .forms import ShopItemForm, CategoryForm
 
 
 def home(request):

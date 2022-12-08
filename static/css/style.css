@@ -10,6 +10,7 @@ body {
 
 h4 {
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Header Styling */
@@ -66,6 +67,14 @@ footer {
     margin-top: 20px;
 }
 
+.btn-reset {
+    margin-left: 10px;
+}
+
+.btn-list {
+    font-size: 0.7em;
+}
+
 .btn-global {
     background-color: #212529;
     color: #ffffff;
@@ -109,6 +118,8 @@ footer {
 	text-decoration: none;
 	color: #212529;
 }
+
+/* Form styling */
 
 .form-field {
     border-style: solid;

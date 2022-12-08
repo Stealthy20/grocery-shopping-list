@@ -1,6 +1,5 @@
 from django import forms
-from .models import ShoppingItem
-from .models import Category
+from .models import ShoppingItem, Category
 
 
 class ShopItemForm(forms.ModelForm):
@@ -15,8 +14,6 @@ class ShopItemForm(forms.ModelForm):
             'brand': forms.TextInput(attrs={'class': 'form-field'}),
             'quantity': forms.TextInput(attrs={'class': 'form-field'}),
         }
-
-
 
 
 class CategoryForm(forms.ModelForm):
