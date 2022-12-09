@@ -1,16 +1,18 @@
 # **Grocery Shopping List**
 
-[Live Site](https://stealthy-grocery-shopping-list.herokuapp.com/)
+[Grocery Shopping List Live Site](https://stealthy-grocery-shopping-list.herokuapp.com/)
 
 ![View of Grocery Shopping List on all devices](docs/mockup.png "Mockup of the site on different devices")
 
 ## **Introduction**
+
 Welcome to Grocery Shopping List.
 
 Grocery Shopping List is my fourth and second to last project, part of the Code Institute, Full Stack Web Developer Course.
 
 The purpose of this website is to make a smart and easy to use shopping list that the user can modify to suit their shopping behaviours.
 The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Allauth handles the user registration and login, and ElephantSQL as a relational database.
+
 ---
 
 ## **UXD - User Experience Design**

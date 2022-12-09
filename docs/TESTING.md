@@ -2,7 +2,7 @@
 
 ### **User Stories Testing**
 
-- [User Stories Testing](https://github.com/Stealthy20/grocery-shopping-list/blob/main/docs/userstorytesting.pdf)
+- [User Stories Testing](https://github.com/Stealthy20/grocery-shopping-list/blob/main/docs/userstoriestest.pdf)
 
 ### **Manual Testing**
 

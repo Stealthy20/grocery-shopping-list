@@ -26,7 +26,9 @@ urlpatterns = [
     path('delete_item/<str:item_id>/', views.delete_item, name="delete_item"),
     path('toggle/<item_id>', views.toggle_item, name='toggle'),
     path('category', views.category, name="category"),
-    path('delete_category/<category_id>', views.delete_category, name='delete_category'),
+    path(
+        'delete_category/<category_id>',
+        views.delete_category, name='delete_category'),
     path('delete_list', views.delete_list, name='delete_list'),
     path('accounts/', include('allauth.urls')),
 ]

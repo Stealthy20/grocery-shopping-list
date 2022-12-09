@@ -47,7 +47,8 @@ def add_item(request):
             return redirect('add_item')
     categories = Category.objects.filter(user=request.user)
     form = ShopItemForm()
-    return render(request, 'add_item.html', {'form': form, 'categories': categories})
+    return render(
+        request, 'add_item.html', {'form': form, 'categories': categories})
 
 
 @login_required(login_url='/accounts/login/')

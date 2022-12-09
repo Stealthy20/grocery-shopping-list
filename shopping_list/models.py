@@ -52,8 +52,9 @@ class ShoppingItem(models.Model):
     item = models.CharField(max_length=50, blank=False)
     brand = models.CharField(max_length=50, blank=True)
     quantity = models.CharField(max_length=50, blank=True, default='ex 1 kg')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE,
-                        blank=True, null=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE,
+        blank=True, null=True)
     picked = models.BooleanField(null=False, blank=False, default=False)
 
     def __str__(self):
