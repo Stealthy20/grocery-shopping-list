@@ -151,9 +151,9 @@
          /* JS to display the message for the user */
          
         setTimeout(function() {
-            let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close()
+            const messages = document.getElementById("msg");
+            const alert = new bootstrap.Alert(messages);
+            alert.close();
         }, 3000);
 
         /* JS to sort the shopping list */
