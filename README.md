@@ -1,8 +1,8 @@
 # **Grocery Shopping List**
 
-[Live Site]()
+[Live Site](https://stealthy-grocery-shopping-list.herokuapp.com/)
 
-![Responsive view of Nourish and Lift on all devices](")
+![Responsive view of Grocery Shopping List on all devices](")
 
 ## **Introduction**
 Welcome to Grocery Shopping List.
