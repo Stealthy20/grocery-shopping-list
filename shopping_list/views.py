@@ -15,7 +15,7 @@ def home(request):
     return render(request, 'index.html')
 
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def shopping_list(request):
 
     """ A View for rendering items to shopping list """
@@ -24,7 +24,7 @@ def shopping_list(request):
     return render(request, 'shopping_list.html', {'items': items})
 
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def add_item(request):
 
     """ A View to render the form for the user to add new items """
@@ -50,7 +50,7 @@ def add_item(request):
     return render(request, 'add_item.html', {'form': form, 'categories': categories})
 
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def edit_item(request, item_id):
 
     """ A View to render the form for the user to edit items """
@@ -91,7 +91,7 @@ def toggle_item(request, item_id):
     return redirect('shopping_list')
 
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 def category(request):
 
     """ A View to render the form for the user to ad new categories  """

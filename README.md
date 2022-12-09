@@ -2,7 +2,7 @@
 
 [Live Site](https://stealthy-grocery-shopping-list.herokuapp.com/)
 
-![Responsive view of Grocery Shopping List on all devices](")
+![View of Grocery Shopping List on all devices](docs/mockup.png "Mockup of the site on different devices")
 
 ## **Introduction**
 Welcome to Grocery Shopping List.
