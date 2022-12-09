@@ -218,7 +218,7 @@ So this is my basic layout before starting the project.
 ## **Testing**
 
 Link to the Testing Document
-- [TESTING.md](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/TESTING.md)
+- [TESTING.md](docs/TESTING.md)
 ---
 
 ## **Deployment**

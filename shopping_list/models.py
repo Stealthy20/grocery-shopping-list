@@ -41,7 +41,7 @@ class ShoppingItem(models.Model):
     brand:
         optional field to clarify the brand of the item
     quantity:
-        Charfield to put in the amount of that product you need, ex 1kg. 
+        Charfield to put in the amount of that product you need, ex 1kg.
     category:
         Link to the Category Model
     picked:
@@ -52,7 +52,8 @@ class ShoppingItem(models.Model):
     item = models.CharField(max_length=50, blank=False)
     brand = models.CharField(max_length=50, blank=True)
     quantity = models.CharField(max_length=50, blank=True, default='ex 1 kg')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE,
+                        blank=True, null=True)
     picked = models.BooleanField(null=False, blank=False, default=False)
 
     def __str__(self):

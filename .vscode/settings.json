@@ -26,6 +26,8 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "cSpell.words": [
       "addcat",
+      "bouncebutton",
+      "Csvg",
       "deletecat",
       "getcat",
       "Shoppingitem",

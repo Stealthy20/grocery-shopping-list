@@ -21,7 +21,7 @@
 - User stays on the page when item are added.
 - Can't progress without adding mandatory fields.
 - Feedback when mandatory fields are missing. 
-- Message are displayed when item are succesfully added.
+- Message are displayed when item are successfully added.
 - All buttons correctly redirects.
 
 **Edit item**
@@ -32,7 +32,7 @@
 **Category**
 - User can add new categories.
 - Users can only see their own categories and not other users.
-- Message are displayed when a category are succesfully added.
+- Message are displayed when a category are successfully added.
 - Modal displaying the correct item when deleting.
 - Item gets deleted when accepting the modal.
 - All buttons correctly redirects.
@@ -40,7 +40,7 @@
 **Shopping List**
 - Users can see their own added items correctly.
 - Toggle function correctly moves the items under the correct heading when pressed.
-- Reset list button succesfully deletes all the users items and not all items in database.
+- Reset list button successfully deletes all the users items and not all items in database.
 - All the sorting options works as intended.
 - All buttons correctly redirects.
 
