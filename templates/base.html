@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  
+    <link rel="icon" type="image/x-icon" href="/docs/favicon.ico">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/9beb937b3c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
@@ -146,7 +147,8 @@
     </footer>
     <script>
 
-         /* JS to display the message for the user */
+         /* JS to display the message for the user
+            Code from I Think therefore i blog project */
          
         setTimeout(function() {
             const messages = document.getElementById("msg");
@@ -162,9 +164,9 @@
             info: false,
         });
 
-        $( document ).ready(function() {
-    
         /* JS to animate submit buttons */
+
+        $( document ).ready(function() {
     
             $("#bouncebutton").click(function(){
                 const element =  document.querySelector('.bouncebutton');
@@ -173,7 +175,7 @@
                 element.classList.remove('bounce'); 
                 },        2000);
             });
-            });
+        });
 
     
 

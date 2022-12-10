@@ -95,7 +95,7 @@ In production the site has been tested on the following browsers,
 ### **Bugs and Fixes**
 
 **Bug1**
-- The user wasn't automatic assigned to the item, which made all user be able to add items to eachothers lists.
+- The user wasn't automatic assigned to the item, which made all user be able to add items to each others lists.
 
 ![Bug1](bug1.PNG "Image of the first bug")
 
@@ -110,17 +110,17 @@ In production the site has been tested on the following browsers,
 ![Bug1 fix](bug2.png "Image of the second bug")
 
 **Fix**
-- So i removed the category from the form and insted called it and set the choice from the frontend form with this code bellow. 
+- So i removed the category from the form and instead called it and set the choice from the frontend form with this code bellow. 
 
 ![Bug2 fix](bug2fix.png "Image of the second bug fix")
 
 **Bug 3**
-- When the user wanted to add a item to the list and didnt choose an category which is a required field. The user got an 404 error. 
+- When the user wanted to add a item to the list and didn't choose an category which is a required field. The user got an 404 error. 
 
 ![Bug3](bug3.png "Image of the third bug")
 
 **Fix**
-- I added code to the view to check if category is truthy, if not throw an error message else procced. 
+- I added code to the view to check if category is truthy, if not throw an error message else proceed. 
 
 ![Bug3 fix](bug3fix.png "Image of the third bug fix")
 

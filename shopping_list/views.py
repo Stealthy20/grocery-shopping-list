@@ -69,7 +69,9 @@ def edit_item(request, item_id):
             return redirect('shopping_list')
     categories = Category.objects.filter(user=request.user)
     form = ShopItemForm(instance=item)
-    return render(request, 'edit_item.html', {'form': form, 'categories': categories})
+    return render(
+        request, 'edit_item.html',
+        {'form': form, 'categories': categories})
 
 
 def delete_item(request, item_id):
@@ -107,7 +109,9 @@ def category(request):
             messages.success(request, 'You successfully added the category')
             return redirect('category')
     form = CategoryForm()
-    return render(request, 'category.html', {'form': form, 'categories': categories})
+    return render(
+        request, 'category.html',
+        {'form': form, 'categories': categories})
 
 
 def delete_category(request, category_id):
