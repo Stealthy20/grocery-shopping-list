@@ -210,3 +210,8 @@ select {
     color: #FAFAFA;
     background: #212529;
     }
+
+
+ol > li {
+    padding-top: 5px;
+}

@@ -4,15 +4,28 @@
 
     {% if user.is_authenticated %}
 
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <div class="row">
                 <div class="col">
-                    <h3>Welcome Back {{ user.username }}</h3>
+                    <h4>Welcome {{ user.username }}</h4>
                     <div>
-                        <p>Hello {{ user.username }} get back to your <a class="link" href="{% url 'shopping_list' %}">Shopping List</a>
-                        </p>
-                        <a class="btn btn-global" href="{% url 'shopping_list' %}" role="button">Got to your shopping list</a>    
-                        <a class="btn btn-global" href="{% url 'category' %}" role="button">Manage your Catagories</a>    
+                        <p>Hello and Welcome to Grocery Shopping List.</p>
+                        <p>Create your own shopping list with your own categories, that you can sort whatever way you want.</p>
+                        <div>
+                            <p><strong>To get started follow the following steps</strong></p>
+                            <ol>
+                                <li>Go to <strong>"Manage Categories"</strong> in the top right corner</li>
+                                <li>Add all the categories that you will need for your personal shopping list</li>
+                                <li>Go to <strong>"Add Item"</strong> and add all the items you are getting</li>
+                                <li>You will find all the items under <strong>"Shopping List"</strong></li>
+                                <li>When you pick the item in the store you hit the button with checkmark to mark it as picked</li>
+                                <li>When you are done just hit reset list and clear it for your next shopping tour</li>
+                            </ol>
+                        </div>
+                        <div class="btn-div">
+                            <a class="btn btn-global" href="{% url 'shopping_list' %}" role="button">Go to your shopping list</a>    
+                            <a class="btn btn-global" href="{% url 'category' %}" role="button">Manage your Catagories</a> 
+                        </div>   
                     </div>
                 </div> 
             </div>
@@ -20,18 +33,29 @@
         
     {% else %}
     
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <div class="row">   
                 <div class="col">
-                    <h3>Welcome to Grocery Shopping List!</h3>
+                    <h4>Welcome to Grocery Shopping List!</h4>
                     <div>
-                        <p>Hello and welcome to Grocery Shopping List. This is a site where you can create your own shopping list, 
-                            add your own categories and sort it whatever way you want to.</p>
-                        <p>Don't forget to add your own categories, you can do that by clicking the "Manage Categories" tab in the upper right corner.</p>
-                        <p>But to get started you need to <a a class="link" href="{% url 'account_login' %}">Log in</a>
-                        or <a a class="link" href="{% url 'account_signup' %}">Sign Up</a></p>
-                        <a class="btn btn-global" href="{% url 'account_login' %}" role="button">Log In</a>    
-                        <a class="btn btn-global" href="{% url 'account_signup' %}" role="button">Sign Up</a>   
+                        <p>Hello and Welcome to Grocery Shopping List.</p>
+                        <p>Create your own shopping list with your own categories, that you can sort whatever way you want.</p>
+                        <div>
+                            <p><strong>To get started follow the following steps</strong></p>
+                            <ol>
+                                <li><a class="link" href="{% url 'account_login' %}">Log in</a>or <a class="link" href="{% url 'account_signup' %}">Sign Up</a></li>
+                                <li>Go to <strong>"Manage Categories"</strong> in the top right corner</li>
+                                <li>Add all the categories that you will need for your personal shopping list</li>
+                                <li>Go to <strong>"Add Item"</strong> and add all the items you are getting</li>
+                                <li>You will find all the items under <strong>"Shopping List"</strong></li>
+                                <li>When you pick the item in the store you hit the button with checkmark to mark it as picked</li>
+                                <li>when you are done just hit reset list and clear it for your next shopping tour</li>
+                            </ol>
+                        </div>
+                        <div class="btn-div">
+                            <a class="btn btn-global" href="{% url 'account_login' %}" role="button">Log In</a>    
+                            <a class="btn btn-global" href="{% url 'account_signup' %}" role="button">Sign Up</a>
+                        </div>
                     </div> 
                 </div>
             </div>
