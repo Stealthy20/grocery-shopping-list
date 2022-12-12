@@ -210,6 +210,10 @@ So, this is my initial project layout in its most basic form.
 
 - [Quillbot](https://quillbot.com/)
 
+- [Grammarly](https://www.grammarly.com/)
+
+- [Font Awesome](https://fontawesome.com/)
+
 ---
 
 ## **Testing**
