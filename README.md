@@ -224,7 +224,7 @@ Link to the Testing Document
 
 ## **Deployment**
 
-The master branch of this repository is the most current version and has been used for the deployed version of the site.
+The main branch of this repository is the most current version and has been used for the deployed version of the site.
 
 The Code Institiue student template was used to create this project.
 
