@@ -213,7 +213,7 @@ So this is my basic layout before starting the project.
 
 - [Balsamiq](https://balsamiq.com/)
 
-- [Grammarly](https://www.grammarly.com/)
+- [Quillbot](https://quillbot.com/)
 
 ---
 
