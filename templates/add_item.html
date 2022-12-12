@@ -10,7 +10,7 @@
   <!-- Form to add new items-->
 
   <div class="d-flex justify-content-center">
-    <form action="add_item" method="post"class="form-group">
+    <form action="add_item" method="post" class="form-group">
       {% csrf_token %}
       {{ form.as_p }}
       <div>

@@ -10,7 +10,7 @@
     <form class="d-flex justify-content-center p-2" action="category" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-global btn-category p-2 bouncebutton"  id="bouncebutton"type="submit">Add</button> 
+        <button class="btn btn-global btn-category p-2 bouncebutton" id="bouncebutton" type="submit">Add</button> 
     </form>
 
     <!-- List to display the users categories -->
@@ -28,11 +28,11 @@
 
                     <!-- Delete Category Modal -->
 
-                    <div class="modal fade" id="deleteCategoryModal{{ category.id }}" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+                    <div class="modal fade" id="deleteCategoryModal{{ category.id }}" tabindex="-1" aria-labelledby="deleteCategoryModal{{ category.id }}" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Delete {{ category.category }}!</h5>
+                            <h5 class="modal-title">Delete {{ category.category }}!</h5>
                             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -53,9 +53,9 @@
                 {% endif %}
 
             {% endfor %}
-            
-            <a class="btn btn-global btn-div" href="{% url 'add_item' %}" role="button">Add items to the shopping list</a>
+
         </ul>
+        <a class="btn btn-global btn-div" href="{% url 'add_item' %}" role="button">Add items to the shopping list</a>
     </div>
 
 {% endblock %}

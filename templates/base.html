@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
@@ -74,7 +74,7 @@
     
  <!-- Delete List Modal -->
 
-    <div class="modal fade" id="deleteListModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal fade" id="deleteListModal" tabindex="-1" aria-labelledby="deleteListModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -108,7 +108,7 @@
         <!-- Grid container -->
         <div class="container">
           <!-- Section: Social media -->
-          <section class="mb-4">
+          <div class="mb-4">
 
             <!-- Facebook -->
 
@@ -141,7 +141,7 @@
               target="_blank"
               data-mdb-ripple-color="muted"
               ><i class="fab fa-github footer-link"></i></a>
-          </section>
+              </div>
           <!-- Section: Social media -->
         </div>
     </footer>
@@ -164,7 +164,9 @@
             info: false,
         });
 
-        /* JS to animate submit buttons */
+        /* JS to animate submit buttons 
+        From https://freefrontend.com/bootstrap-buttons/
+        Author: BBBootstrap Team*/
 
         $( document ).ready(function() {
     

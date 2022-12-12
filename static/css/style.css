@@ -83,9 +83,9 @@ footer {
     border-radius: 25px;
 }
 
-.btn-global:hover{
-    color: #FAFAFA;
-}
+ /* CSS to animate submit buttons 
+    From https://freefrontend.com/bootstrap-buttons/
+    Author: BBBootstrap Team*/
 
 .btn-add {
     font-size: 0.7em;
@@ -116,7 +116,6 @@ footer {
     opacity: 0;
     color: #FAFAFA;
 }
-
 
 /* Shopping List Styling */
 

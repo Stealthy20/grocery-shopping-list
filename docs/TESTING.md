@@ -79,6 +79,7 @@ In production the site has been tested on the following browsers,
 
 
 [W3C HTML Validator](https://validator.w3.org/)
+- No Errors
 
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
@@ -89,7 +90,17 @@ In production the site has been tested on the following browsers,
 - No Errors
 
 
-![Flake 8 Python code errors](https://github.com/Harry-Leepz/Nourish-and-Lift/blob/main/docs/images/pep8.png "Python code errors")
+[Code Institute Python Validator](https://pep8ci.herokuapp.com/)
+
+- All files created or modified by me where tested. 
+- The following errors where found  
+
+**All these errors are from the settings.py file and can't be shortened without breaking the code**
+- 124: E501 line too long (91 > 79 characters) *This is Allauth password vaildators*
+- 127: E501 line too long (81 > 79 characters) *This is Allauth password vaildators*
+- 130: E501 line too long (82 > 79 characters) *This is Allauth password vaildators*
+- 133: E501 line too long (83 > 79 characters) *This is Allauth password vaildators*
+- 156: E501 line too long (80 > 79 characters) *This cloudinary storage link*
 
 
 ### **Bugs and Fixes**

@@ -73,9 +73,10 @@ To be sure that my project where launched with a ready to use site i opted to di
     - Keep picked items under a new header to separate the items
 
 **Phase 3**
-- My final planned phase would focus on user registration and accounts
+- My final planned phase was to implement functionality that made it easier for the user(these are not yet implemented).
     - Sign up with social media accounts
     - Password recovery
+    - The choice to share the list with others
 ---
 
 ## **The Structure Plane**
@@ -203,8 +204,6 @@ So this is my basic layout before starting the project.
 
 - [jQuery](https://jquery.com/)
 
-- [Font Awesome](https://fontawesome.com/)
-
 - [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
 
 - [Github](https://github.com/)
@@ -267,8 +266,7 @@ os.environ["CLOUDINARY_URL"] = "cloudinary key"
 
 1. Log into Heroku
 2. Create a new app, choose a location closest to you
-3. Search for Heroku Postgres from the resources tab and add to your project
-4. Make sure to have `dj_database_url` and `psycopg2` installed.
+3. Make sure to have `dj_database_url` and `psycopg2` installed.
 ```
 pip3 install dj_database_url
 pip3 install psycopg2
@@ -292,7 +290,7 @@ ALLOWED_HOSTS = ['<you-app-name>.herokuapp.com', 'localhost']
 14. In Heroku, within settings, under config vars select `Reveal config vars`
 15. Add the following, 
 ```
-DATABASE_URL =	<added by Heroku when Postgres installed>
+DATABASE_URL =	<your database key here>
 DISABLE_COLLECTSTATIC =	1 
 SECRET_KEY = <your variable here>
 ```
@@ -306,3 +304,15 @@ git push
 18. Your deployed site can be launched by clicking `Open App` from its page within Heroku.
 
 ---
+
+## **Credits**
+
+**Code**
+
+- A large amount of code came from the Code Institute, "Hello Django" and "I Think Therefore i Blog".
+    - Both these are walkthrough projects by Code Institute, this gave students a introduction to Django and how to use custom Models and CRUD functionality
+
+- The bounce effect used on submitt buttons is taken from
+    - [BBBootstrap Team](https://freefrontend.com/bootstrap-buttons/)
+        
+
