@@ -9,9 +9,9 @@
         <div class="container d-flex justify-content-center">
             <div class="row">
                 <div class="col">
-                    <h4>Welcome {{ user.username }}</h4>
+                    <h4 class="text-center">Welcome {{ user.username }}</h4>
                     <div>
-                        <p>Hello and Welcome to Grocery Shopping List.</p>
+                        <p><strong>Hello and Welcome to Grocery Shopping List.</strong></p>
                         <p>Create your own shopping list with your own categories, that you can sort whatever way you want.</p>
                         <div>
                             <p><strong>To get started follow the following steps</strong></p>
@@ -24,7 +24,7 @@
                                 <li>When you are done just hit reset list and clear it for your next shopping tour</li>
                             </ol>
                         </div>
-                        <div class="btn-div">
+                        <div class="btn-div text-center">
                             <a class="btn btn-global" href="{% url 'shopping_list' %}" role="button">Go to your shopping list</a>    
                             <a class="btn btn-global" href="{% url 'category' %}" role="button">Manage your Catagories</a> 
                         </div>   
@@ -38,9 +38,9 @@
         <div class="container d-flex justify-content-center">
             <div class="row">   
                 <div class="col">
-                    <h4>Welcome to Grocery Shopping List!</h4>
+                    <h4 class="text-center">Welcome to Grocery Shopping List!</h4>
                     <div>
-                        <p>Hello and Welcome to Grocery Shopping List.</p>
+                        <p><strong>Hello and Welcome to Grocery Shopping List.</strong></p>
                         <p>Create your own shopping list with your own categories, that you can sort whatever way you want.</p>
                         <div>
                             <p><strong>To get started follow the following steps</strong></p>
@@ -54,7 +54,7 @@
                                 <li>when you are done just hit reset list and clear it for your next shopping tour</li>
                             </ol>
                         </div>
-                        <div class="btn-div">
+                        <div class="btn-div text-center">
                             <a class="btn btn-global" href="{% url 'account_login' %}" role="button">Log In</a>    
                             <a class="btn btn-global" href="{% url 'account_signup' %}" role="button">Sign Up</a>
                         </div>
