@@ -7,7 +7,7 @@
 ### **Manual Testing**
 
 **Navigation Bar** 
-- Navigation bar is fully responsive on large/medium/small resolutions.
+- The navigation bar is fully responsive on large/medium/small resolutions.
 - At 320px, all navigation links are inline and not wrapping on another line.
 - All links are correctly redirecting to the correct pages. 
 - Signing out, correctly shows the correct dropdown options, Log in and Register.
@@ -18,39 +18,39 @@
 - Links open in a new browser tab. 
 
 **Add Item**
-- User stays on the page when item are added.
+- User stays on the page when items are added.
 - Can't progress without adding mandatory fields.
 - Feedback when mandatory fields are missing. 
-- Message are displayed when item are successfully added.
-- All buttons correctly redirects.
+- Messages are displayed when items are successfully added.
+- All buttons correctly redirect.
 
 **Edit item**
-- Correctly gets the info from the item that's up for edit.
-- Item get correctly updated. 
-- All buttons correctly redirects.
+- Correctly gets the info from the item that's up for editing.
+- Item gets correctly updated. 
+- All buttons correctly redirect.
 
 **Category**
 - User can add new categories.
-- Users can only see their own categories and not other users.
-- Message are displayed when a category are successfully added.
+- Users can only see their categories and not other users.
+- Message is displayed when a category is successfully added.
 - Modal displaying the correct item when deleting.
 - Item gets deleted when accepting the modal.
-- All buttons correctly redirects.
+- All buttons correctly redirect.
 
 **Shopping List**
 - Users can see their own added items correctly.
 - Toggle function correctly moves the items under the correct heading when pressed.
-- Reset list button successfully deletes all the users items and not all items in database.
-- All the sorting options works as intended.
-- All buttons correctly redirects.
+- Reset list button successfully deletes all the user's items and not all items in the database.
+- All the sorting options work as intended.
+- All buttons correctly redirect.
 
 **Delete Modal**
-- All delete modals works correctly.
+- All delete modals work correctly.
 - Modals can be closed by pressing outside of the modal itself.
-- All buttons correctly redirects.
+- All buttons correctly redirect.
 
 **Footer**
-- All links are correctly redirecting to the correct pages and opens in new tabs
+- All links are correctly redirecting to the correct pages and open in new tabs
 
 **Chrome Dev Tools**
 
@@ -106,7 +106,7 @@ In production the site has been tested on the following browsers,
 ### **Bugs and Fixes**
 
 **Bug1**
-- The user wasn't automatic assigned to the item, which made all user be able to add items to each others lists.
+- The user wasn't automatically assigned to the item, which made all user able to add items to each other's lists.
 
 ![Bug1](bug1.PNG "Image of the first bug")
 
@@ -116,22 +116,22 @@ In production the site has been tested on the following browsers,
 ![Bug1 fix](bug1fix.PNG "Image of the first bug fix")
 
 **Bug 2**
-- The first bug led me to the second one. When i tried to add the item it threw an error. 
+- The first bug led me to the second one. When I tried to add the item it threw an error. 
 
 ![Bug1 fix](bug2.png "Image of the second bug")
 
 **Fix**
-- So i removed the category from the form and instead called it and set the choice from the frontend form with this code bellow. 
+- So I removed the category from the form and instead called it and set the choice from the frontend form with this code bellow. 
 
 ![Bug2 fix](bug2fix.png "Image of the second bug fix")
 
 **Bug 3**
-- When the user wanted to add a item to the list and didn't choose an category which is a required field. The user got an 404 error. 
+- When the user wanted to add an item to the list and didn't choose a category which is a required field. The user got a 404 error. 
 
 ![Bug3](bug3.png "Image of the third bug")
 
 **Fix**
-- I added code to the view to check if category is truthy, if not throw an error message else proceed. 
+- I added code to the view to check if the category is truthy, if not throw an error message else proceed. 
 
 ![Bug3 fix](bug3fix.png "Image of the third bug fix")
 

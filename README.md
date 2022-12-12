@@ -6,22 +6,21 @@
 
 ## **Introduction**
 
-Welcome to Grocery Shopping List.
+Welcome to Grocery Shopping List.
 
-Grocery Shopping List is my fourth and second to last project, part of the Code Institute, Full Stack Web Developer Course.
+My fourth and next-to-last project for the Full Stack Web Developer Course at Code Institute is called Grocery Shopping List.
 
-The purpose of this website is to make a smart and easy to use shopping list that the user can modify to suit their shopping behaviours.
-The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Allauth handles the user registration and login, and ElephantSQL as a relational database.
-
+This website's goal is to help users create a useful shopping list that they may customize to fit their shopping preferences.
+HTML, CSS, JavaScript, Python, and Django are the technologies used for this project. ElephantSQL serves as a relational database, and Allauth manages user registration and login.
 ---
 
 ## **UXD - User Experience Design**
 
-The planning that went into this project largely emerged from my own dissatisfaction with shopping apps.
+This project was planned in large part as a result of my own frustration with shopping apps.
 
-So with that in mind and with some interviews i made the choice to design a easy to use app.
+I decided to design an intuitive software keeping that in consideration as well as the results of various interviews.
 
-The planning of the project is broken into 5 planes,
+The project's planning is divided into 5 planes,
 
 - The Strategy Plane
 - The Scope Plane
@@ -55,21 +54,21 @@ My user stories where obtained from my own personal experiences and interviews.
 
 ## **The Scope Plane**
 
-To be sure that my project where launched with a ready to use site i opted to divide my project into three phases.
+To be sure that my project was launched with a ready-to-use site I opted to divide the project into three phases.
 
 **Phase 1**
 - A project that would be good enough to use.
-    - Home Page with an introduction .
+    - Home Page with an introduction.
     - Navbar allowing the user to navigate to different pages.
     - Shopping list view to see the items. 
     - Page to add and edit items.
     - The ability to delete items and list.
-    - Sign up and log in function
+    - Sign up and login function
 
 **Phase 2**
 - Building upon the Phase 1 project with additional features.
-    - User specific categories
-    - Modals to ensure the user are sure to delete items
+    - User-specific categories
+    - Modals to ensure the user is sure to delete items
     - Keep picked items under a new header to separate the items
 
 **Phase 3**
@@ -83,21 +82,18 @@ To be sure that my project where launched with a ready to use site i opted to di
 
 #### **Colors**
 
-For this project i choosed to only work with two different colors. This because i wanted the site to feel clean and focus should be on the functionality.
+I only used two distinct colors for this project. I did this because I wanted the site to feel simple and the functionality to be the main focus.
 
 #212529
-- I choosed this color for all all details on the page, such as navbar, footer, buttons and the headings of the tables. I like the dark grey blueish color. 
-The color is taken from the bootstrap dark color the the table head. 
+- I decided to use this color for every element on the page, including the navbar, footer, buttons, and table heads. The dark grey, slightly blue-tinged tint is appealing to me.
+The bootstrap dark color and table head are used to create the color.
 
 #FAFAFA
-- The off-white color was used for the background color and for text. The off-white color have a nice contrast to my other color without being to bright as a background. 
+- Both the text and the background were in an off-white hue. The off-white color is a wonderful backdrop contrast to my other color without being very bright.
 
 #### **Fonts**
 
-- For this project i opted to go with the standard font. This because it suited the easy and minimalistic approach i went in this project.
-
-#### **Images**
-
+- I choose to use the standard font for my project. This is so because it complemented the straightforward, simple approach I took to this project.
 
 #### **Key Models**
 
@@ -108,15 +104,15 @@ The color is taken from the bootstrap dark color the the table head.
 
 **Category**
 - The category model holds the information about the category
-- The category is connected to the imported user model, to make sure that the user have their own categories.
+- The category is connected to the imported user model, to make sure that the user has their own categories.
 ---
 
 ## **The Skeleton Plane**
 
-I made some changes as the project advanced, but this was my plan going into the project. 
-I wanted the computer and mobile version to be as close to eachother as possible. 
+This was my initial plan, however I made some adjustments as the project got farther along.
+I tried to make the computer and mobile versions as similar as I could.
 
-So this is my basic layout before starting the project.
+So, this is my initial project layout in its most basic form.
 
 ![Site Wireframe](docs/wireframes.JPG "Image of the wireframes")
 ---
@@ -134,12 +130,12 @@ So this is my basic layout before starting the project.
 ![Project Navigation Bar](docs/navbar.png "Image of the navigation bar")
 
 **Introduction**
-- Home page features an introduction to notify users to welcome them and explain the purpose of the site.
+- The home page features an introduction to notify users to welcome them and explain the purpose of the site.
 
 ![Project Introduction](docs/intro.png "Image of the Introduction")
 
 **Add item page**
-- Add item page, where the user insert all the information about the item they want to add to the list.
+- Add item page, where the user inserts all the information about the item they want to add to the list.
 
 ![Add Item](docs/additem.png "Image of add item page")
 
@@ -149,7 +145,7 @@ So this is my basic layout before starting the project.
 ![Edit Item](docs/edititem.png "Image of the edit item page")
 
 **Category**
-- Users can add and manage their categories in this page
+- Users can add and manage their categories on this page
 
 ![Category](docs/categories.png "Image of category page")
 
@@ -157,7 +153,7 @@ So this is my basic layout before starting the project.
 - The user can view their added items in this list view.
 - The user can easy see what items they have picked and what is left to pick.
 - All the table heads are sortable.
-- A button to reset the list when the user are done.
+- A button to reset the list when the user is done.
 
 ![Shopping List](docs/shoppinglist.png "Image of Shopping List page.")
 
@@ -167,7 +163,7 @@ So this is my basic layout before starting the project.
 ![Delete Modal](docs/modal.png "Image of the delete modal")
 
 **Footer**
-- Footer with social media links that opens in new tabs.
+- Footer with social media links that open in new tabs.
 
 ![Footer](docs/footer.png "Image of the footer")
 ---
@@ -309,10 +305,10 @@ git push
 
 **Code**
 
-- A large amount of code came from the Code Institute, "Hello Django" and "I Think Therefore i Blog".
-    - Both these are walkthrough projects by Code Institute, this gave students a introduction to Django and how to use custom Models and CRUD functionality
+- A large amount of code came from the Code Institute, "Hello Django" and "I Think Therefore I Blog".
+    - Both these are walkthrough projects by Code Institute, which gave students an introduction to Django and how to use custom Models and CRUD functionality
 
-- The bounce effect used on submitt buttons is taken from
+- The bounce effect used on submit buttons is taken from
     - [BBBootstrap Team](https://freefrontend.com/bootstrap-buttons/)
         
 
