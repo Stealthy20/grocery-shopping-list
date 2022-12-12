@@ -10,12 +10,11 @@
 
     <!-- Table to display all the users items that they need to pick -->
     
-    <h4>Items to Pick</h4>
-    <div class="table-responsive">
+    <div class="table-responsive mt-3">
     <table class="table sortTable">
         <thead class="table-dark">
             <tr>
-                <th scope="col"></th>
+                <th scope="col"><u><strong>Items To Pick</strong></u></th>
                 <th scope="col">Item</th>
                 <th scope="col">Brand</th>
                 <th scope="col">Quantity</th>
@@ -62,8 +61,8 @@
                             </p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-global" data-bs-dismiss="modal">Close</button>
                             <a class="btn btn-global" href="/delete_item/{{ item.id }}">Delete</a>
+                            <button type="button" class="btn btn-global" data-bs-dismiss="modal">Close</button>
                         </div>
                         </div>
                         </div>
@@ -81,12 +80,11 @@
 
     <!-- Table to display all the users items that they already picked -->
 
-    <h4>Items Picked</h4>
         <div class="table-responsive">
         <table class="table sortTable">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col"></th>
+                    <th scope="col"><u><strong>Items Picked</strong></u></th>
                     <th scope="col">Item</th>
                     <th scope="col">Brand</th>
                     <th scope="col">Quantity</th>
@@ -131,8 +129,8 @@
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-global" data-bs.dismiss="modal">Close</button>
                                 <a class="btn btn-global" href="/delete_item/{{ item.id }}">Delete</a>
+                                <button type="button" class="btn btn-global" data-bs.dismiss="modal">Close</button>
                             </div>
                             </div>
                             </div>

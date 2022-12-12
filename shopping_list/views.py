@@ -39,7 +39,7 @@ def add_item(request):
                 item.user = request.user
                 item.category = category
                 item = form.save()
-                messages.success(request, 'You successfully added the item')
+                messages.success(request, 'Item successfully added')
                 return redirect('add_item')
         else:
             messages.error(request, 'You need to add a Category before\
@@ -65,7 +65,7 @@ def edit_item(request, item_id):
             item = form.save(commit=False)
             item.category = category
             item = form.save()
-            messages.success(request, 'You successfully updated the item')
+            messages.success(request, 'Item successfully updated')
             return redirect('shopping_list')
     categories = Category.objects.filter(user=request.user)
     form = ShopItemForm(instance=item)
@@ -80,7 +80,7 @@ def delete_item(request, item_id):
 
     item = get_object_or_404(ShoppingItem, id=item_id)
     item.delete()
-    messages.success(request, 'Item deleted successfully')
+    messages.success(request, 'Item successfully deleted')
     return redirect('shopping_list')
 
 
@@ -106,7 +106,7 @@ def category(request):
             item = form.save(commit=False)
             item.user = request.user
             item = form.save()
-            messages.success(request, 'You successfully added the category')
+            messages.success(request, 'Category successfully added')
             return redirect('category')
     form = CategoryForm()
     return render(
@@ -120,7 +120,7 @@ def delete_category(request, category_id):
 
     category = get_object_or_404(Category, pk=category_id)
     category.delete()
-    messages.success(request, 'Category deleted successfully')
+    messages.success(request, 'Category successfully deleted')
     return redirect('category')
 
 

@@ -83,6 +83,10 @@ footer {
     border-radius: 25px;
 }
 
+.btn-global:hover {
+    color: #FAFAFA;
+}
+
  /* CSS to animate submit buttons 
     From https://freefrontend.com/bootstrap-buttons/
     Author: BBBootstrap Team*/
